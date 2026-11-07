@@ -25,7 +25,9 @@ def soft_assignment(boundaries: torch.Tensor, n_frames: int, tau: float) -> torc
     b = boundaries.clone()
     pad = 4.0 * tau
     b = torch.cat([b[:, :1] - pad, b[:, 1:-1], b[:, -1:] + pad], dim=1)
-    t = torch.arange(n_frames, device=b.device, dtype=b.dtype).view(1, 1, -1)
+    # frame centres: without the +0.5 the boundary frame is claimed by the
+    # previous syllable (off-by-one, caught by tests/test_drift.py)
+    t = (torch.arange(n_frames, device=b.device, dtype=b.dtype) + 0.5).view(1, 1, -1)
     left = stable_sigmoid((t - b[:, :-1].unsqueeze(-1)) / tau)
     right = stable_sigmoid((t - b[:, 1:].unsqueeze(-1)) / tau)
     return (left - right).clamp_min(0.0)
@@ -62,9 +64,11 @@ def drift_loss(pooled_gen: torch.Tensor, pos_pool: torch.Tensor,
                neg_pool: torch.Tensor, tau_kernel: torch.Tensor) -> torch.Tensor:
     """Stop-gradient drifting objective: pull generated syllable features onto
     the real pool, push them off other generated features."""
-    x = pooled_gen.detach()
+    x = pooled_gen.detach()          # generator never enters the field estimate
     V = drift_field(x, pos_pool, neg_pool, tau_kernel)
-    target = (x + V).detach()
+    # keep the graph on V so the kernel temperature can actually learn;
+    # x is already detached, so the stop-gradient semantics are preserved
+    target = x + V
     return F.mse_loss(pooled_gen, target)
 
 

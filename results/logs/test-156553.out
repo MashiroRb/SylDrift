@@ -1,0 +1,4 @@
+[ok] colsum max dev = 0.0130
+[ok] tau -> 0 recovers hard split
+[ok] grad to boundaries = 0.0955
+[test] exit=1

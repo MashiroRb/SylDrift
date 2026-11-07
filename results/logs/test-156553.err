@@ -1,0 +1,13 @@
+Traceback (most recent call last):
+  File "/mnt/beegfs/home/liudianru26/project/SylDrift/tests/test_drift.py", line 49, in <module>
+    test_drift_loss_shape_and_sign()
+  File "/mnt/beegfs/home/liudianru26/project/SylDrift/tests/test_drift.py", line 40, in test_drift_loss_shape_and_sign
+    loss.backward()
+  File "/home/liudianru26/.conda/envs/syldrift/lib/python3.11/site-packages/torch/_tensor.py", line 581, in backward
+    torch.autograd.backward(
+  File "/home/liudianru26/.conda/envs/syldrift/lib/python3.11/site-packages/torch/autograd/__init__.py", line 347, in backward
+    _engine_run_backward(
+  File "/home/liudianru26/.conda/envs/syldrift/lib/python3.11/site-packages/torch/autograd/graph.py", line 825, in _engine_run_backward
+    return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: element 0 of tensors does not require grad and does not have a grad_fn

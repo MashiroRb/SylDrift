@@ -1,0 +1,7 @@
+Traceback (most recent call last):
+  File "/mnt/beegfs/home/liudianru26/project/SylDrift/tests/test_drift.py", line 47, in <module>
+    test_hard_limit()
+  File "/mnt/beegfs/home/liudianru26/project/SylDrift/tests/test_drift.py", line 19, in test_hard_limit
+    assert hard == expect, (hard, expect)
+           ^^^^^^^^^^^^^^
+AssertionError: ([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3])

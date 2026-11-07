@@ -1,0 +1,6 @@
+[ok] colsum max dev = 0.0130
+[ok] tau -> 0 recovers hard split
+[ok] grad to boundaries = 0.1452
+[ok] drift loss = 0.7407, tau grad = -0.8298
+ALL PASS
+[test] exit=0

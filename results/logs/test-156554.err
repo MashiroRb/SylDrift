@@ -1,0 +1,7 @@
+Traceback (most recent call last):
+  File "/mnt/beegfs/home/liudianru26/project/SylDrift/tests/test_drift.py", line 49, in <module>
+    test_drift_loss_shape_and_sign()
+  File "/mnt/beegfs/home/liudianru26/project/SylDrift/tests/test_drift.py", line 41, in test_drift_loss_shape_and_sign
+    assert tau.grad is not None
+           ^^^^^^^^^^^^^^^^^^^^
+AssertionError
