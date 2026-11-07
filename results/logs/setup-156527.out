@@ -1,0 +1,5 @@
+[setup] start Sat Nov  7 18:30:54 HKT 2026 host=aias-general-1
+Channels:
+ - defaults
+Platform: linux-64
+Collecting package metadata (repodata.json): ...working... failed

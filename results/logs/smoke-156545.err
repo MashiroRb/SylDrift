@@ -1,0 +1,18 @@
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/mnt/beegfs/home/liudianru26/project/SylDrift/syldrift/train.py", line 101, in <module>
+    main()
+  File "/mnt/beegfs/home/liudianru26/project/SylDrift/syldrift/train.py", line 79, in main
+    d_loss = drift_loss(flat, pos, neg, tau_kernel.abs() + 1e-3)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/beegfs/home/liudianru26/project/SylDrift/syldrift/drift.py", line 65, in drift_loss
+    V = drift_field(x, pos_pool, neg_pool, tau_kernel)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/beegfs/home/liudianru26/project/SylDrift/syldrift/drift.py", line 51, in drift_field
+    attract = torch.einsum("nm,nmd->nd", w_pos, pos) - x
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/liudianru26/.conda/envs/syldrift/lib/python3.11/site-packages/torch/functional.py", line 402, in einsum
+    return _VF.einsum(equation, operands)  # type: ignore[attr-defined]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: einsum(): the number of subscripts in the equation (2) does not match the number of dimensions (4) for operand 0 and no ellipsis was given

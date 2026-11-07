@@ -1,0 +1,25 @@
+Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7f8bb9caecf0>: Failed to establish a new connection: [Errno 111] Connection refused')': /anaconda/pkgs/main/tos.json
+
+Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7f8bb9ab19d0>: Failed to establish a new connection: [Errno 111] Connection refused')': /anaconda/pkgs/main/tos.json
+
+Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7f8bb9a6dcd0>: Failed to establish a new connection: [Errno 111] Connection refused')': /anaconda/pkgs/main/tos.json
+
+Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7f8bb99439e0>: Failed to establish a new connection: [Errno 111] Connection refused')': /anaconda/pkgs/main/linux-64/repodata.json.zst
+
+Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7f8bb9943b30>: Failed to establish a new connection: [Errno 111] Connection refused')': /anaconda/pkgs/main/noarch/repodata.json.zst
+
+Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7f8bb99437d0>: Failed to establish a new connection: [Errno 111] Connection refused')': /anaconda/pkgs/main/linux-64/repodata.json.zst
+
+Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7f8bb9943bc0>: Failed to establish a new connection: [Errno 111] Connection refused')': /anaconda/pkgs/main/noarch/repodata.json.zst
+
+Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7f8bb9943d40>: Failed to establish a new connection: [Errno 111] Connection refused')': /anaconda/pkgs/main/linux-64/repodata.json.zst
+
+Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7f8bb9943d10>: Failed to establish a new connection: [Errno 111] Connection refused')': /anaconda/pkgs/main/noarch/repodata.json.zst
+
+
+ProxyError: Conda cannot proceed due to an error in your proxy configuration.
+Check for typos and other configuration errors in any '.netrc' file in your home directory,
+any environment variables ending in '_PROXY', and any other system-wide proxy
+configuration settings.
+
+

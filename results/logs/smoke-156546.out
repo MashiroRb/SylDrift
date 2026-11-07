@@ -1,0 +1,3 @@
+[slurm] job=156546 host=aias-compute-4 Sat Nov  7 19:14:57 CST 2026
+NVIDIA GeForce RTX 4090, 24564 MiB
+[init] params=23.2M device=cuda gpu=NVIDIA GeForce RTX 4090

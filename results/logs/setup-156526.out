@@ -1,0 +1,6 @@
+[setup] start Sat Nov  7 18:29:21 HKT 2026 host=aias-general-1
+Retrieving notices: - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / done
+Channels:
+ - defaults
+Platform: linux-64
+Collecting package metadata (repodata.json): ...working... failed
