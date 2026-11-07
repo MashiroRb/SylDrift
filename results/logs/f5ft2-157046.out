@@ -1,0 +1,67 @@
+[f5ft2] start Sun Nov  8 12:47:30 AM CST 2026 host=aias-compute-2
+Download Vocos from huggingface charactr/vocos-mel-24khz
+
+vocab :  /mnt/beegfs/home/liudianru26/project/SylDrift/third_party/F5-TTS/src/f5_tts/infer/examples/vocab.txt
+token :  custom
+model :  hf_cache/hub/models--SWivid--F5-TTS/snapshots/84e5a410d9cead4de2f847e7c9369a6440bdfaca/F5TTS_v1_Base/model_1250000.safetensors 
+
+[ft] dtype torch.float32
+[ft] params 337.1M
+[ft] pairs 6000
+[step 50] fm=0.4375
+[step 100] fm=0.4273
+[step 150] fm=0.7734
+[step 200] fm=0.4346
+[step 250] fm=0.5158
+[step 300] fm=1.9193
+[step 350] fm=0.3243
+[step 400] fm=0.5528
+[step 450] fm=0.5093
+[step 500] fm=0.4522
+[ckpt] 500
+[step 550] fm=0.3879
+[step 600] fm=0.3892
+[step 650] fm=0.3922
+[step 700] fm=0.4401
+[step 750] fm=0.5893
+[step 800] fm=0.4144
+[step 850] fm=0.5892
+[step 900] fm=0.4494
+[step 950] fm=0.5730
+[step 1000] fm=0.4541
+[ckpt] 1000
+[step 1050] fm=0.3514
+[step 1100] fm=0.5471
+[step 1150] fm=0.3835
+[step 1200] fm=0.5139
+[step 1250] fm=0.4728
+[step 1300] fm=0.9599
+[step 1350] fm=0.4543
+[step 1400] fm=0.2987
+[step 1450] fm=0.3393
+[step 1500] fm=0.4696
+[ckpt] 1500
+[step 1550] fm=1.3185
+[step 1600] fm=0.6101
+[step 1650] fm=0.6609
+[step 1700] fm=0.3223
+[step 1750] fm=0.2743
+[step 1800] fm=0.4663
+[step 1850] fm=0.2467
+[step 1900] fm=0.3583
+[step 1950] fm=0.4608
+[step 2000] fm=0.5290
+[ckpt] 2000
+[step 2050] fm=0.6780
+[step 2100] fm=0.3156
+[step 2150] fm=0.4051
+[step 2200] fm=0.3291
+[step 2250] fm=0.4402
+[step 2300] fm=0.5602
+[step 2350] fm=0.3770
+[step 2400] fm=0.3255
+[step 2450] fm=0.6062
+[step 2500] fm=0.3280
+[ckpt] 2500
+[ft] done
+[f5ft2] exit=0 Sun Nov  8 12:54:42 AM CST 2026

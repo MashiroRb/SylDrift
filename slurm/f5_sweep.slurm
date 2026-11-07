@@ -15,5 +15,5 @@ export HF_HUB_OFFLINE=1
 export TRANSFORMERS_OFFLINE=1
 PY=$HOME/.conda/envs/syldrift/bin/python
 echo "[sweep] start $(date)"
-$PY -m syldrift.f5_sweep --n "${N:-10}" --nfe 1 2 4 8 16 32
+$PY -m syldrift.f5_sweep --n "${N:-10}" --nfe ${NFE:-1 2 4} --ckpt "${CKPT:-}" --tag "${TAG:-base}" --out "${OUT:-runs/f5_nfe_sweep.json}"
 echo "[sweep] exit=$? $(date)"

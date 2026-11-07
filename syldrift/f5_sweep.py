@@ -36,12 +36,14 @@ def main():
     ap.add_argument("--n", type=int, default=10)
     ap.add_argument("--nfe", nargs="+", type=int, default=[1, 2, 4, 8, 16, 32])
     ap.add_argument("--out", default="runs/f5_nfe_sweep.json")
+    ap.add_argument("--ckpt", default="")
+    ap.add_argument("--tag", default="base")
     args = ap.parse_args()
 
     from f5_tts.api import F5TTS
     from syldrift.eval import ASR, cer
 
-    ckpt = glob.glob("hf_cache/hub/models--SWivid--F5-TTS/snapshots/*/F5TTS_v1_Base/model_*.safetensors")[0]
+    ckpt = args.ckpt or glob.glob("hf_cache/hub/models--SWivid--F5-TTS/snapshots/*/F5TTS_v1_Base/model_*.safetensors")[0]
     f5 = F5TTS(model="F5TTS_v1_Base", ckpt_file=ckpt,
                device="cuda" if torch.cuda.is_available() else "cpu")
     asr = ASR()
@@ -65,7 +67,7 @@ def main():
         if not text:
             continue
         for nfe in args.nfe:
-            p = f"runs/f5_sweep/u{i}_nfe{nfe}.wav"
+            p = f"runs/f5_sweep/{args.tag}_u{i}_nfe{nfe}.wav"
             wav, sr, _ = f5.infer(ref_file=ref_wav, ref_text=ref_text, gen_text=text,
                                   nfe_step=nfe, cfg_strength=2.0, sway_sampling_coef=-1.0)
             sf.write(p, wav, sr)
