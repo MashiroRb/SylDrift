@@ -95,8 +95,11 @@ def main():
             step += 1
             mel = batch["mel"].to(device)
             B, T, D = mel.shape
-            P = min(args.prompt_frames, T // 3)
-            prompt, target = mel[:, :P], mel[:, P:]
+            # speaker prompt is a pooled VECTOR (first second), target is the
+            # WHOLE utterance: dropping the prompt from the target forced the
+            # model to learn "noise -> tail", which broke inference lengths
+            P = min(args.prompt_frames, max(1, T // 3))
+            prompt, target = mel[:, :P], mel
             if target.shape[1] < 10:
                 continue
 

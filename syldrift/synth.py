@@ -43,7 +43,7 @@ def main():
 
     ids = [vocab.get(ch, 1) for ch in args.text]
     text_ids = torch.tensor(ids).unsqueeze(0).to(device)
-    T = args.frames or max(20, int(len(ids) * 12) - 86)
+    T = args.frames or max(20, int(len(ids) * 12))
     torch.manual_seed(args.seed)
     if args.ref:
         from .audio import load_wav

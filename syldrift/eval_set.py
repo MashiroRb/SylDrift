@@ -80,8 +80,7 @@ def main():
         spk = torch.log(m.clamp_min(1e-5)).mean(-1).unsqueeze(0)
 
         ids = [vocab.get(s, 1) for s in syl]
-        # the model is trained on the tail after an 86-frame prompt
-        T = max(20, int(len(ids) * 12) - 86)
+        T = max(20, int(len(ids) * 12))
         ids_t = torch.tensor(ids).unsqueeze(0)
         with torch.no_grad():
             mel = model.sample(ids_t, spk, T, steps=1, frame_ids=uniform_frames(ids_t, T))
