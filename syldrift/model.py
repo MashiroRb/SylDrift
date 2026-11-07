@@ -95,8 +95,11 @@ class FlowTTS(nn.Module):
             h = blk(h, cond, txt, text_mask)
         return self.out(self.final_norm(h))
 
-    @torch.no_grad()
     def sample(self, text_ids, spk_ref, n_frames, steps=1, text_mask=None, frame_ids=None):
+        """Differentiable: the drift term needs gradients to reach the generator.
+
+        Callers that only want audio must wrap this in torch.no_grad().
+        """
         B = text_ids.shape[0]
         x = torch.randn(B, n_frames, self.mel_dim, device=text_ids.device)
         for i in range(steps):

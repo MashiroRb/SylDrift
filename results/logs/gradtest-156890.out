@@ -1,0 +1,4 @@
+[check] pooled.requires_grad = True
+[check] grad norm without drift=0.0843 with drift=0.1823 identical=False
+ALL PASS
+[gradtest] exit=0

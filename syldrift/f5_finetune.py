@@ -101,6 +101,7 @@ def main():
     ap.add_argument("--drift_w", type=float, default=0.05)
     ap.add_argument("--out", default="runs/f5_ft")
     ap.add_argument("--manifest", default="data/manifest_ft.jsonl")
+    ap.add_argument("--fp32", type=int, default=0)
     args = ap.parse_args()
 
     from f5_tts.api import F5TTS
@@ -109,6 +110,9 @@ def main():
     f5 = F5TTS(model="F5TTS_v1_Base", ckpt_file=ckpt, device=device)
     cfm = f5.ema_model
     mdtype = next(cfm.parameters()).dtype
+    if args.fp32:
+        cfm.float()
+        mdtype = torch.float32
     print("[ft] model dtype", mdtype, flush=True)
     for p in cfm.parameters():
         p.requires_grad_(True)
@@ -116,7 +120,10 @@ def main():
 
     rows = [json.loads(l) for l in open(args.manifest, encoding="utf-8")]
     ds = MelText(rows, cfm.mel_spec, cfm.vocab_char_map)
-    dl = DataLoader(ds, batch_size=args.batch, shuffle=True, collate_fn=collate, drop_last=True)
+    dl = DataLoader(ds, batch_size=args.batch, shuffle=True, collate_fn=collate,
+                    drop_last=True, num_workers=2,
+                    multiprocessing_context="spawn" if os.name != "nt" else None)
+
     opt = AdamW(cfm.parameters(), lr=args.lr, betas=(0.9, 0.98))
     os.makedirs(args.out, exist_ok=True)
 

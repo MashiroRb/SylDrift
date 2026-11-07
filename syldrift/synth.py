@@ -55,7 +55,8 @@ def main():
     else:
         spk = torch.zeros(1, N_MELS, device=device)
 
-    mel = model.sample(text_ids, spk, T, steps=args.steps).squeeze(0).transpose(0, 1)
+    with torch.no_grad():
+        mel = model.sample(text_ids, spk, T, steps=args.steps).squeeze(0).transpose(0, 1)
     wav = mel_to_wav(mel.cpu())
     os.makedirs(os.path.dirname(args.out) or ".", exist_ok=True)
     sf.write(args.out, wav.numpy(), SAMPLE_RATE)

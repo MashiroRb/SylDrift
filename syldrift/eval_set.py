@@ -74,7 +74,8 @@ def main():
         ids = [vocab.get(s, 1) for s in syl]
         T = max(20, int(len(ids) * 12))
         ids_t = torch.tensor(ids).unsqueeze(0)
-        mel = model.sample(ids_t, spk, T, steps=1, frame_ids=uniform_frames(ids_t, T))
+        with torch.no_grad():
+            mel = model.sample(ids_t, spk, T, steps=1, frame_ids=uniform_frames(ids_t, T))
         w = mel_to_wav(mel.squeeze(0).transpose(0, 1))
         p = f"/tmp/cer_{i}.wav"
         sf.write(p, w.numpy(), SAMPLE_RATE)

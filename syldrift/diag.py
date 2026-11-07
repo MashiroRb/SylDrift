@@ -52,6 +52,7 @@ def main():
         "B": "wo3 men5 qu4 gong1 yuan2 san4 bu4 ba5".split(),
         "C": "zhe4 shi4 yi1 ci4 zhong1 wen2 yu3 yin1 he2 cheng2".split(),
     }
+    torch.set_grad_enabled(False)
     outs = {}
     for k, syl in texts.items():
         ids = torch.tensor([[vocab.get(s, 1) for s in syl]])

@@ -1,0 +1,27 @@
+[slurm] job=156901 Sat Nov  7 11:11:06 PM CST 2026 aias-compute-5
+NVIDIA A800 80GB PCIe, 81920 MiB
+[cudnn] disabled
+[data] 60001 utts, vocab=1838, device=cuda
+[model] 55.7M
+[step    20] fm=13.7020 drift=3.4544 tau=1.003 0.29s/step
+[step    40] fm=9.8050 drift=1.0460 tau=1.007 0.28s/step
+[step    60] fm=6.5892 drift=1.2659 tau=1.011 0.28s/step
+[step    80] fm=7.2685 drift=1.2464 tau=1.014 0.27s/step
+[step   100] fm=6.1646 drift=1.5744 tau=1.017 0.27s/step
+[step   120] fm=4.2964 drift=1.3224 tau=1.020 0.27s/step
+[step   140] fm=3.5390 drift=0.6554 tau=1.024 0.27s/step
+[step   160] fm=4.2062 drift=1.5912 tau=1.027 0.27s/step
+[step   180] fm=4.2249 drift=1.5800 tau=1.030 0.27s/step
+[step   200] fm=3.3176 drift=1.1071 tau=1.034 0.27s/step
+[step   220] fm=3.3928 drift=0.5356 tau=1.037 0.27s/step
+[step   240] fm=3.0065 drift=0.6397 tau=1.040 0.27s/step
+[step   260] fm=3.2068 drift=1.8647 tau=1.044 0.27s/step
+[step   280] fm=3.4891 drift=1.2550 tau=1.048 0.27s/step
+[step   300] fm=3.7920 drift=1.5690 tau=1.051 0.27s/step
+[step   320] fm=3.2364 drift=0.8066 tau=1.055 0.27s/step
+[step   340] fm=2.7368 drift=1.2487 tau=1.058 0.27s/step
+[step   360] fm=2.6023 drift=0.4121 tau=1.062 0.27s/step
+[step   380] fm=3.2985 drift=2.4459 tau=1.066 0.27s/step
+[step   400] fm=2.8750 drift=0.6090 tau=1.070 0.27s/step
+[step   420] fm=3.7567 drift=0.5583 tau=1.073 0.27s/step
+[step   440] fm=2.4260 drift=0.4399 tau=1.077 0.27s/step
