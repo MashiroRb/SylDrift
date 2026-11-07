@@ -82,8 +82,10 @@ def main():
     model = FlowTTS(dim=args.dim, depth=args.depth, heads=args.heads,
                     text_vocab=max(256, len(vocab))).to(device)
     print(f"[model] {sum(p.numel() for p in model.parameters())/1e6:.1f}M", flush=True)
-    tau_kernel = torch.tensor(0.5, device=device, requires_grad=True)
-    opt = AdamW(list(model.parameters()) + [tau_kernel], lr=args.lr, betas=(0.9, 0.98))
+    # log-parameterised kernel temperature: raw value can drift negative and
+    # collapse the softmax (this produced NaN at step 49k)
+    tau_raw = torch.tensor(0.0, device=device, requires_grad=True)
+    opt = AdamW(list(model.parameters()) + [tau_raw], lr=args.lr, betas=(0.9, 0.98))
     loader = DataLoader(ds, batch_size=args.batch, shuffle=True, collate_fn=collate, drop_last=True)
 
     t0 = time.time()
@@ -134,9 +136,14 @@ def main():
             base = target.unsqueeze(1).expand(-1, K, -1, -1).reshape(B * K, target.shape[1], D)
             pos = torch.gather(base, 1, idx[..., None].expand(-1, -1, D))
             neg = flat.detach().unsqueeze(1).expand(-1, 4, -1)
-            dl = drift_loss(flat, pos, neg, tau_kernel.abs() + 1e-3)
+            tau = tau_raw.exp().clamp(0.05, 5.0)
+            dl = drift_loss(flat, pos, neg, tau)
 
             loss = fm + args.drift_w * dl
+            if not torch.isfinite(loss):
+                opt.zero_grad(set_to_none=True)
+                print(f"[skip] non-finite loss at step {step}", flush=True)
+                continue
             opt.zero_grad(set_to_none=True)
             loss.backward()
             torch.nn.utils.clip_grad_norm_(model.parameters(), 1.0)
@@ -144,7 +151,7 @@ def main():
 
             if step % args.log_every == 0:
                 print(f"[step {step:5d}] fm={fm.item():.4f} drift={dl.item():.4f} "
-                      f"{(time.time()-t0)/step:.2f}s/step", flush=True)
+                      f"tau={tau.item():.3f} {(time.time()-t0)/step:.2f}s/step", flush=True)
             if step % args.ckpt_every == 0:
                 torch.save({"model": model.state_dict(), "vocab": vocab, "args": vars(args)},
                            os.path.join(args.out, f"ckpt-{step}.pt"))

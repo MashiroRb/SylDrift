@@ -1,0 +1,4 @@
+[f5] start Sat Nov  7 22:38:11 CST 2026 host=aias-compute-4
+[f5] ckpt: hf_cache/hub/models--SWivid--F5-TTS/snapshots/84e5a410d9cead4de2f847e7c9369a6440bdfaca/F5TTS_v1_Base/model_1250000.safetensors
+Download Vocos from huggingface charactr/vocos-mel-24khz
+[f5] exit=1 Sat Nov  7 22:38:37 CST 2026

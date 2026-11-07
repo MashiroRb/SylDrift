@@ -16,6 +16,13 @@ SIM_MODEL = os.environ.get("SIM_MODEL", "microsoft/wavlm-base-plus-sv")
 
 
 def norm_text(s):
+    """Fold traditional->simplified first: Whisper often emits traditional
+    characters, which inflates CER by ~0.2 on otherwise correct audio."""
+    try:
+        import zhconv
+        s = zhconv.convert(s, "zh-cn")
+    except Exception:
+        pass
     s = re.sub(r"[^\u4e00-\u9fffa-zA-Z0-9]", "", s)
     return s.lower()
 

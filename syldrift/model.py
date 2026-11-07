@@ -65,6 +65,7 @@ class FlowTTS(nn.Module):
             nn.Conv1d(dim, dim, 5, padding=2), nn.GELU(), nn.Conv1d(dim, dim, 5, padding=2)
         )
         self.in_proj = nn.Linear(mel_dim, dim)
+        self.pos_emb = nn.Parameter(torch.randn(1, 4096, dim) * 0.02)
         self.t_embed = TimestepEmbed(dim)
         self.spk_proj = nn.Linear(mel_dim, dim)
         self.cond_proj = nn.Sequential(nn.Linear(dim * 2, dim * 2), nn.SiLU(), nn.Linear(dim * 2, dim))
@@ -82,6 +83,8 @@ class FlowTTS(nn.Module):
         the text entirely (measured: different texts produced cos=0.9999 output).
         """
         h = self.in_proj(x)
+        T = h.shape[1]
+        h = h + self.pos_emb[:, :T]
         if frame_ids is not None:
             h = h + self.text_emb(frame_ids)
         txt = self.text_emb(text_ids).transpose(1, 2)
