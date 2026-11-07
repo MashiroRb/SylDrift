@@ -43,6 +43,8 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--ckpt", required=True)
     ap.add_argument("--content", default="data/partial/test/content.txt")
+    ap.add_argument("--hanzi_json", default="data/hanzi.json")
+    ap.add_argument("--manifest", default="")
     ap.add_argument("--wavdir", default="data/partial/test/wav")
     ap.add_argument("--n", type=int, default=20)
     ap.add_argument("--out", default="runs/eval_cer.json")
@@ -56,15 +58,21 @@ def main():
     model = FlowTTS(dim=a["dim"], depth=a["depth"], text_vocab=max(256, len(vocab))).to(device).eval()
     model.load_state_dict(blob["model"])
 
-    samples = pairs_from_content(args.content, args.n)
+    if args.manifest:
+        hz = json.load(open(args.hanzi_json, encoding="utf-8")) if os.path.exists(args.hanzi_json) else {}
+        rows = [json.loads(l) for l in open(args.manifest, encoding="utf-8")][: args.n]
+        samples = [(r["utt"], hz.get(r["utt"], ""), r["syl"], r["wav"]) for r in rows if hz.get(r["utt"])]
+    else:
+        samples = [(u, h, s, None) for (u, h, s) in pairs_from_content(args.content, args.n)]
     asr = ASR()
     scores, details = [], []
-    for i, (utt, hanzi, syl) in enumerate(samples, 1):
-        ref = None
-        for root, _, files in os.walk(args.wavdir):
-            if utt + ".wav" in files:
-                ref = os.path.join(root, utt + ".wav")
-                break
+    for i, (utt, hanzi, syl, ref_direct) in enumerate(samples, 1):
+        ref = ref_direct
+        if ref is None:
+            for root, _, files in os.walk(args.wavdir):
+                if utt + ".wav" in files:
+                    ref = os.path.join(root, utt + ".wav")
+                    break
         if ref is None:
             continue
         wav = load_wav(ref)[: SAMPLE_RATE].unsqueeze(0)
@@ -72,7 +80,8 @@ def main():
         spk = torch.log(m.clamp_min(1e-5)).mean(-1).unsqueeze(0)
 
         ids = [vocab.get(s, 1) for s in syl]
-        T = max(20, int(len(ids) * 12))
+        # the model is trained on the tail after an 86-frame prompt
+        T = max(20, int(len(ids) * 12) - 86)
         ids_t = torch.tensor(ids).unsqueeze(0)
         with torch.no_grad():
             mel = model.sample(ids_t, spk, T, steps=1, frame_ids=uniform_frames(ids_t, T))

@@ -15,6 +15,5 @@ export TRANSFORMERS_OFFLINE=1
 export OMP_NUM_THREADS=${SLURM_CPUS_PER_TASK:-8}
 PY=$HOME/.conda/envs/syldrift/bin/python
 echo "[cer] start $(date)"
-$PY -m syldrift.eval_set --ckpt "${CKPT:-runs/base/ckpt-last.pt}" --n "${N:-10}" \
-    --out "${OUT:-runs/eval_cer.json}"
+$PY -m syldrift.eval_set --ckpt "${CKPT:-runs/base/ckpt-last.pt}" --n "${N:-10}" --manifest "${MANIFEST:-data/split_val.jsonl}" --out "${OUT:-runs/eval_cer.json}"
 echo "[cer] exit=$? $(date)"
