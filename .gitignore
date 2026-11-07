@@ -6,3 +6,6 @@ __pycache__/
 /runs/
 /logs/
 *.log
+
+results/**/*.pt
+results/**/*.ckpt
