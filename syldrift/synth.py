@@ -30,21 +30,30 @@ def main():
     ap.add_argument("--steps", type=int, default=1)
     ap.add_argument("--frames", type=int, default=0, help="0 = estimate from text")
     ap.add_argument("--seed", type=int, default=0)
+    ap.add_argument("--ref", default="", help="reference wav for the timbre prompt")
     args = ap.parse_args()
 
     device = "cuda" if torch.cuda.is_available() else "cpu"
     blob = torch.load(args.ckpt, map_location=device)
     a = blob["args"]
-    model = FlowTTS(dim=a["dim"], depth=a["depth"]).to(device)
+    vocab = blob.get("vocab") or json.load(open(os.path.join(os.path.dirname(args.ckpt), "vocab.json")))
+    model = FlowTTS(dim=a["dim"], depth=a["depth"], text_vocab=max(256, len(vocab))).to(device)
     model.load_state_dict(blob["model"])
     model.eval()
 
-    vocab = blob.get("vocab") or json.load(open(os.path.join(os.path.dirname(args.ckpt), "vocab.json")))
     ids = [vocab.get(ch, 1) for ch in args.text]
     text_ids = torch.tensor(ids).unsqueeze(0).to(device)
     T = args.frames or max(20, int(len(ids) * 12))
     torch.manual_seed(args.seed)
-    spk = torch.zeros(1, N_MELS, device=device)
+    if args.ref:
+        from .audio import load_wav
+        ref = load_wav(args.ref)[: 22050].unsqueeze(0)
+        rmel = __import__("torchaudio").transforms.MelSpectrogram(
+            sample_rate=SAMPLE_RATE, n_fft=N_FFT, hop_length=HOP, n_mels=N_MELS,
+            f_min=FMIN, f_max=FMAX).to(device)(ref.to(device))
+        spk = torch.log(rmel.clamp_min(1e-5)).mean(-1)
+    else:
+        spk = torch.zeros(1, N_MELS, device=device)
 
     mel = model.sample(text_ids, spk, T, steps=args.steps).squeeze(0).transpose(0, 1)
     wav = mel_to_wav(mel.cpu())

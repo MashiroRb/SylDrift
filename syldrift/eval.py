@@ -44,7 +44,16 @@ class ASR:
                              device=0 if torch.cuda.is_available() else -1)
 
     def __call__(self, wav_path):
-        out = self.pipe(wav_path, generate_kwargs={"language": "chinese"})
+        import soundfile as sf
+        w, sr = sf.read(wav_path, dtype="float32")
+        if w.ndim > 1:
+            w = w.mean(1)
+        if sr != 16000:
+            import torchaudio
+            w = torchaudio.functional.resample(torch.from_numpy(w), sr, 16000).numpy()
+            sr = 16000
+        out = self.pipe({"raw": w, "sampling_rate": sr},
+                        generate_kwargs={"language": "chinese"})
         return out["text"]
 
 

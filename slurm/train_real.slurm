@@ -3,7 +3,7 @@
 #SBATCH --partition=rtx
 #SBATCH --gres=gpu:1
 #SBATCH --cpus-per-task=8
-#SBATCH --mem=32G
+#SBATCH --mem=12G
 #SBATCH --time=02:00:00
 #SBATCH --output=logs/train-%j.out
 #SBATCH --error=logs/train-%j.err
@@ -18,10 +18,5 @@ PY=$HOME/.conda/envs/syldrift/bin/python
 echo "[slurm] job=$SLURM_JOB_ID $(date) $(hostname)"
 nvidia-smi --query-gpu=name,memory.total --format=csv,noheader
 
-$PY -m syldrift.train_real \
-  --manifest "${MANIFEST:-data/mini.jsonl}" \
-  --steps "${STEPS:-100}" \
-  --batch "${BATCH:-4}" \
-  --out "${OUT:-runs/mini}" \
-  --log_every 20
+$PY -m syldrift.train_real --manifest "${MANIFEST:-data/manifest_test.jsonl}" --steps "${STEPS:-100}" --batch "${BATCH:-4}" --drift_w "${DRIFT_W:-0.1}" --dim "${DIM:-384}" --depth "${DEPTH:-6}" --heads "${HEADS:-6}" --lr "${LR:-2e-4}" --out "${OUT:-runs/mini}" --log_every 20
 echo "[slurm] exit=$? $(date)"

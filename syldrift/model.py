@@ -74,9 +74,16 @@ class FlowTTS(nn.Module):
         nn.init.zeros_(self.out.weight)
         nn.init.zeros_(self.out.bias)
 
-    def forward(self, x, t, text_ids, spk_ref, text_mask=None):
-        """x: [B,T,mel] noisy mel at time t; t: [B]; text_ids: [B,L]; spk_ref: [B,mel]"""
+    def forward(self, x, t, text_ids, spk_ref, text_mask=None, frame_ids=None):
+        """x: [B,T,mel] noisy mel at time t; t: [B]; text_ids: [B,L]; spk_ref: [B,mel]
+
+        frame_ids: [B,T] syllable index for every frame. Without it the model has
+        no way to know which syllable occupies which frames and learns to ignore
+        the text entirely (measured: different texts produced cos=0.9999 output).
+        """
         h = self.in_proj(x)
+        if frame_ids is not None:
+            h = h + self.text_emb(frame_ids)
         txt = self.text_emb(text_ids).transpose(1, 2)
         txt = (txt + self.text_conv(txt)).transpose(1, 2)
         spk = self.spk_proj(spk_ref)
@@ -86,11 +93,11 @@ class FlowTTS(nn.Module):
         return self.out(self.final_norm(h))
 
     @torch.no_grad()
-    def sample(self, text_ids, spk_ref, n_frames, steps=1, text_mask=None):
+    def sample(self, text_ids, spk_ref, n_frames, steps=1, text_mask=None, frame_ids=None):
         B = text_ids.shape[0]
         x = torch.randn(B, n_frames, self.mel_dim, device=text_ids.device)
         for i in range(steps):
             t = torch.full((B,), i / steps, device=text_ids.device)
-            v = self.forward(x, t, text_ids, spk_ref, text_mask)
+            v = self.forward(x, t, text_ids, spk_ref, text_mask, frame_ids)
             x = x + v / steps
         return x

@@ -1,0 +1,7 @@
+[diag] ref=data/partial/test/wav/SSB0009/SSB00090229.wav
+text A vs B: mse=1.0493 cos=0.9670
+text A vs C: mse=2.2423 cos=0.9628
+text B vs C: mse=0.7697 cos=0.9898
+same text, different seed: mse=0.7837
+output std=1.6256 mean=-3.0940
+[diag] exit=0
