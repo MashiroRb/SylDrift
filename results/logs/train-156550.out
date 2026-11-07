@@ -1,0 +1,11 @@
+[slurm] job=156550 Sat Nov  7 19:23:40 CST 2026 aias-compute-4
+NVIDIA GeForce RTX 4090, 24564 MiB
+[data] 200 utts, vocab=16, device=cuda
+[model] 23.2M
+[step    20] fm=15.6519 drift=1.7339 0.11s/step
+[step    40] fm=12.8848 drift=3.9895 0.07s/step
+[step    60] fm=9.8146 drift=2.9285 0.06s/step
+[step    80] fm=8.7045 drift=4.3980 0.06s/step
+[step   100] fm=6.4144 drift=2.7268 0.05s/step
+[done]
+[slurm] exit=0 Sat Nov  7 19:23:53 CST 2026
