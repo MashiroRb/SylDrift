@@ -89,6 +89,20 @@ def main():
     ds = DistillSet(items, cfm.vocab_char_map)
     dl = DataLoader(ds, batch_size=args.batch, shuffle=True, collate_fn=collate, drop_last=True)
     opt = AdamW(cfm.parameters(), lr=args.lr, betas=(0.9, 0.98))
+    warmup = max(50, int(0.05 * args.steps))
+
+    def lr_lambda(step):
+        if step < warmup:
+            return step / warmup
+        import math
+        prog = (step - warmup) / max(1, args.steps - warmup)
+        return 0.5 * (1 + math.cos(math.pi * prog))
+
+    sched = torch.optim.lr_scheduler.LambdaLR(opt, lr_lambda)
+
+    # EMA keeps the distilled student from oscillating (the 3k-step run diverged)
+    ema = {k: v.detach().clone().float() for k, v in cfm.state_dict().items()}
+    ema_decay = 0.999
     os.makedirs(args.out, exist_ok=True)
 
     step = 0
@@ -115,15 +129,22 @@ def main():
             loss.backward()
             torch.nn.utils.clip_grad_norm_(cfm.parameters(), 1.0)
             opt.step()
+            sched.step()
+            with torch.no_grad():
+                for k, v in cfm.state_dict().items():
+                    if v.dtype.is_floating_point:
+                        ema[k].mul_(ema_decay).add_(v.float(), alpha=1 - ema_decay)
+                    else:
+                        ema[k] = v.clone()
             if step % 25 == 0:
                 print(f"[step {step}] distill={loss.item():.4f}", flush=True)
             if step % 250 == 0:
-                torch.save({"ema_model_state_dict": cfm.state_dict()},
+                torch.save({"ema_model_state_dict": {k: v.to(cfm.state_dict()[k].dtype) for k, v in ema.items()}},
                            os.path.join(args.out, f"model_{step}.pt"))
                 print("[ckpt]", step, flush=True)
             if step >= args.steps:
                 break
-    torch.save({"ema_model_state_dict": cfm.state_dict()},
+    torch.save({"ema_model_state_dict": {k: v.to(cfm.state_dict()[k].dtype) for k, v in ema.items()}},
                os.path.join(args.out, "model_last.pt"))
     print("[distill] done", flush=True)
 
