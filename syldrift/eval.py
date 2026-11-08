@@ -45,9 +45,10 @@ def cer(ref, hyp):
 
 
 class ASR:
-    def __init__(self):
+    def __init__(self, model=None, language=None):
         from transformers import pipeline
-        self.pipe = pipeline("automatic-speech-recognition", model=CER_MODEL,
+        self.lang = language
+        self.pipe = pipeline("automatic-speech-recognition", model=model or CER_MODEL,
                              device=0 if torch.cuda.is_available() else -1)
 
     def __call__(self, wav_path):
@@ -59,8 +60,10 @@ class ASR:
             import torchaudio
             w = torchaudio.functional.resample(torch.from_numpy(w), sr, 16000).numpy()
             sr = 16000
-        out = self.pipe({"raw": w, "sampling_rate": sr},
-                        generate_kwargs={"language": "chinese"})
+        kw = {}
+        if self.lang:
+            kw["language"] = self.lang
+        out = self.pipe({"raw": w, "sampling_rate": sr}, generate_kwargs=kw)
         return out["text"]
 
 

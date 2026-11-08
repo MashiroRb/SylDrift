@@ -1,0 +1,10 @@
+{
+  "boundary_method": "uniform-split-by-character (MFA not available in budget; FLAGGED)",
+  "syllables_total": 1040,
+  "syllables_ge32": 460,
+  "segments": 141062,
+  "within_syl_sim": 0.0134,
+  "cross_syl_sim": 0.0,
+  "margin": 0.0133,
+  "n_probe_syllables": 100
+}

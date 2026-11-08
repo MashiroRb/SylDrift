@@ -1,0 +1,37 @@
+{
+  "f5_32step": {
+    "32": {
+      "n": 30,
+      "cer": 0.15485431908419522,
+      "cer_std": 0.13927153344647608,
+      "len_ratio": 1.0019543847678523
+    },
+    "tag": "base32",
+    "asr": "openai/whisper-small"
+  },
+  "pool_report": {
+    "boundary_method": "uniform-split-by-character (MFA not available in budget; FLAGGED)",
+    "syllables_total": 1040,
+    "syllables_ge32": 460,
+    "segments": 141062,
+    "within_syl_sim": 0.0134,
+    "cross_syl_sim": 0.0,
+    "margin": 0.0133,
+    "n_probe_syllables": 100
+  },
+  "purity_retrieval": {
+    "classes": 315,
+    "probes": 86230,
+    "top1_acc": 0.0035,
+    "chance": 0.00317
+  },
+  "pipeline_check": {
+    "official_example_wer": 0.0,
+    "note": "F5 own example transcribed perfectly -> pipeline OK"
+  },
+  "old_vs_new_testset": {
+    "old_cer_32": 0.43,
+    "new_cer_32": 0.15485431908419522,
+    "cause": "old set dominated by 2-4 char web-search fragments and a single reference clip"
+  }
+}
