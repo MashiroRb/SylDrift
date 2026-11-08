@@ -98,23 +98,15 @@ def main():
             mel = b["mel"].to(dev)
             teach = b["teach"].to(dev)
             ids = b["ids"].to(dev)
-            # cfm.sample is wrapped in @torch.no_grad(), so the one-step pass is
-            # replicated here to keep the graph alive for distillation.
+            # cfm.sample is decorated with @torch.no_grad(); __wrapped__ gives the
+            # raw function so gradients survive. Hand-rolling the sampler was wrong
+            # (manual 32-step sampling of the base model gave CER 1.0 vs 0.43 via
+            # F5's own sampler), so we must reuse theirs verbatim.
             cond = mel[:, :P]
             dur = int(teach.shape[1])
-            B = cond.shape[0]
-            total = P + dur
-            x = torch.randn(B, total, cond.shape[-1], device=dev)
-            cond_mask = torch.zeros(B, total, 1, device=dev, dtype=torch.bool)
-            cond_mask[:, :P] = True
-            step_cond = cond.new_zeros(B, total, cond.shape[-1])
-            step_cond[:, :P] = cond
-            x = torch.where(cond_mask, step_cond, x)
-            t = torch.zeros(B, device=dev)
-            v = cfm.transformer(x=x, cond=step_cond, text=ids, time=t,
-                                mask=None, drop_audio_cond=False, drop_text=False,
-                                cache=False)
-            gen = (x + v)[:, -dur:]
+            out, _ = cfm.sample.__wrapped__(cfm, cond=cond, text=ids, duration=dur,
+                                            steps=1, cfg_strength=1.0)
+            gen = out[:, -dur:]
             loss = F.mse_loss(gen, teach)
             if not torch.isfinite(loss):
                 opt.zero_grad(set_to_none=True)
