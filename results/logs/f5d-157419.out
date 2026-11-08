@@ -1,0 +1,13 @@
+[f5d] start Sun Nov  8 05:00:24 PM CST 2026
+Download Vocos from huggingface charactr/vocos-mel-24khz
+
+vocab :  /mnt/beegfs/home/liudianru26/project/SylDrift/third_party/F5-TTS/src/f5_tts/infer/examples/vocab.txt
+token :  custom
+model :  hf_cache/hub/models--SWivid--F5-TTS/snapshots/84e5a410d9cead4de2f847e7c9369a6440bdfaca/F5TTS_v1_Base/model_1250000.safetensors 
+
+[drift] pool syllables 531
+[drift] items 6000
+[selfcheck] grad_norm=5.4926e+01 tau_grad=-1.3326e-03 l_drift=0.1592 l_rec=4.5599
+[step 25] rec=5.0312 drift=0.2099 tau=1.000 lam=0.1
+[drift] done
+[f5d] exit=0 Sun Nov  8 05:03:26 PM CST 2026
