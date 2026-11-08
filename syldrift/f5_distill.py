@@ -64,6 +64,7 @@ def main():
     ap.add_argument("--batch", type=int, default=2)
     ap.add_argument("--lr", type=float, default=2e-6)
     ap.add_argument("--drift_w", type=float, default=0.0)
+    ap.add_argument("--cons_w", type=float, default=0.0)
     ap.add_argument("--out", default="runs/f5_distill")
     args = ap.parse_args()
 
@@ -121,7 +122,18 @@ def main():
             out, _ = cfm.sample.__wrapped__(cfm, cond=cond, text=ids, duration=dur,
                                             steps=1, cfg_strength=1.0)
             gen = out[:, -dur:]
-            loss = F.mse_loss(gen, teach)
+
+            # self-consistency: the 1-step answer must agree with a 2-step rollout.
+            # Regressing only the 32-step endpoint let the student "cheat" at very
+            # low NFE (CER>1 = runaway length); this ties the two regimes together.
+            cons = torch.zeros((), device=dev)
+            if args.cons_w > 0:
+                with torch.no_grad():
+                    out2, _ = cfm.sample(cond=cond, text=ids, duration=dur,
+                                         steps=2, cfg_strength=1.0)
+                    gen2 = out2[:, -dur:]
+                cons = F.mse_loss(gen, gen2)
+            loss = F.mse_loss(gen, teach) + args.cons_w * cons
             if not torch.isfinite(loss):
                 opt.zero_grad(set_to_none=True)
                 continue
@@ -137,7 +149,7 @@ def main():
                     else:
                         ema[k] = v.clone()
             if step % 25 == 0:
-                print(f"[step {step}] distill={loss.item():.4f}", flush=True)
+                print(f"[step {step}] distill={loss.item():.4f} cons={cons.item():.4f}", flush=True)
             if step % 250 == 0:
                 torch.save({"ema_model_state_dict": {k: v.to(cfm.state_dict()[k].dtype) for k, v in ema.items()}},
                            os.path.join(args.out, f"model_{step}.pt"))

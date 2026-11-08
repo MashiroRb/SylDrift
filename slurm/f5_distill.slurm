@@ -14,5 +14,5 @@ export HF_HOME="$PWD/hf_cache"
 export HF_HUB_OFFLINE=1
 export TRANSFORMERS_OFFLINE=1
 echo "[distill] start $(date) $(hostname)"
-$HOME/.conda/envs/syldrift/bin/python -m syldrift.f5_distill --steps "${STEPS:-600}" --batch "${BATCH:-2}" --lr "${LR:-2e-6}" --out "${OUT:-runs/f5_distill}"
+$HOME/.conda/envs/syldrift/bin/python -m syldrift.f5_distill --steps "${STEPS:-600}" --batch "${BATCH:-2}" --lr "${LR:-2e-6}" --cons_w "${CONS_W:-0.0}" --out "${OUT:-runs/f5_distill}"
 echo "[distill] exit=$? $(date)"
