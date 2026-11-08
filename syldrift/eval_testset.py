@@ -27,6 +27,8 @@ def main():
     ap.add_argument("--n", type=int, default=30)
     ap.add_argument("--out", default="")
     ap.add_argument("--asr", default="")
+    ap.add_argument("--sim", type=int, default=0)
+    ap.add_argument("--seed", type=int, default=1234)
     args = ap.parse_args()
 
     dev = "cuda" if torch.cuda.is_available() else "cpu"
@@ -38,27 +40,60 @@ def main():
     outdir = f"runs/eval_{args.tag}"
     os.makedirs(outdir, exist_ok=True)
 
+    sim = None
+    if args.sim:
+        try:
+            from transformers import Wav2Vec2FeatureExtractor, WavLMForXVector
+            fse = Wav2Vec2FeatureExtractor.from_pretrained("microsoft/wavlm-base-plus-sv")
+            svm = WavLMForXVector.from_pretrained("microsoft/wavlm-base-plus-sv").to(dev).eval()
+
+            @torch.no_grad()
+            def embed(path):
+                w, sr = sf.read(path, dtype="float32")
+                if w.ndim > 1:
+                    w = w.mean(1)
+                if sr != 16000:
+                    import torchaudio
+                    w = torchaudio.functional.resample(torch.from_numpy(w), sr, 16000).numpy()
+                    sr = 16000
+                inp = fse(w, sampling_rate=sr, return_tensors="pt")
+                return svm(**{k: v.to(dev) for k, v in inp.items()}).embeddings
+            sim = embed
+        except Exception as e:
+            print("[eval] SIM unavailable:", e, flush=True)
+
     results = {}
     for nfe in args.nfe:
-        cers, ratios = [], []
+        cers, ratios, sims = [], [], []
+        per_utt = []
         for i, r in enumerate(rows):
             if not r.get("ref_wav"):
                 continue
             wav, sr, _ = f5.infer(ref_file=r["ref_wav"], ref_text=r["ref_text"],
                                   gen_text=r["text"], nfe_step=nfe,
-                                  cfg_strength=2.0, sway_sampling_coef=-1.0)
+                                  cfg_strength=2.0, sway_sampling_coef=-1.0,
+                                  seed=args.seed)
             p = os.path.join(outdir, f"nfe{nfe}_{i:02d}.wav")
             sf.write(p, wav, sr)
             hyp = asr(p)
             c = cer(r["text"], hyp)
             cers.append(c)
             ratios.append(len(hyp) / max(1, len(r["text"])))
-            print(f"[nfe{nfe}][{i}] cer={c:.3f} len={ratios[-1]:.2f}", flush=True)
+            per_utt.append({"utt": r["utt"], "cer": c, "len": ratios[-1]})
+            if sim is not None:
+                try:
+                    sims.append(float(torch.cosine_similarity(embed(p), embed(r["ref_wav"])).item()))
+                except Exception:
+                    pass
+            print(f"[nfe{nfe}][{i}] cer={c:.3f} len={ratios[-1]:.2f}"
+                  + (f" sim={sims[-1]:.3f}" if sims else ""), flush=True)
         results[str(nfe)] = {
             "n": len(cers),
             "cer": float(np.mean(cers)) if cers else None,
             "cer_std": float(np.std(cers)) if cers else None,
             "len_ratio": float(np.mean(ratios)) if ratios else None,
+            "sim": float(np.mean(sims)) if sims else None,
+            "per_utt": per_utt,
         }
         print(json.dumps({k: results[str(nfe)] for k in ["n", "cer", "len_ratio"]}), flush=True)
 

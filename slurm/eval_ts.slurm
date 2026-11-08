@@ -14,5 +14,5 @@ export HF_HOME="$PWD/hf_cache"
 export HF_HUB_OFFLINE=1
 export TRANSFORMERS_OFFLINE=1
 echo "[evts] start $(date)"
-$HOME/.conda/envs/syldrift/bin/python -m syldrift.eval_testset --tag "${TAG:-base}" --nfe ${NFE:-32 4 2} --n "${N:-30}" --ckpt "${CKPT:-}" --asr "${ASR:-}" --out "${OUT:-}"
+$HOME/.conda/envs/syldrift/bin/python -m syldrift.eval_testset --tag "${TAG:-base}" --nfe ${NFE:-32 4 2} --n "${N:-30}" --ckpt "${CKPT:-}" --asr "${ASR:-}" --out "${OUT:-}" --sim "${SIM:-0}"
 echo "[evts] exit=$? $(date)"
