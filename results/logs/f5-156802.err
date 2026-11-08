@@ -1,0 +1,37 @@
+/home/liudianru26/.conda/envs/syldrift/lib/python3.11/site-packages/pydub/utils.py:170: RuntimeWarning: Couldn't find ffmpeg or avconv - defaulting to ffmpeg, but may not work
+  warn("Couldn't find ffmpeg or avconv - defaulting to ffmpeg, but may not work", RuntimeWarning)
+[transformers] Disabling PyTorch because PyTorch >= 2.6 is required but found 2.5.1+cu121
+[transformers] PyTorch was not found. Models won't be available and only tokenizers, configuration and file/data utilities can be used.
+[transformers] PyTorch was not found. Models won't be available and only tokenizers, configuration and file/data utilities can be used.
+huggingface_hub.errors.OfflineModeIsEnabled: Cannot reach https://huggingface.co/charactr/vocos-mel-24khz/resolve/main/config.yaml: offline mode is enabled. To disable it, please unset the `HF_HUB_OFFLINE` environment variable.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/mnt/beegfs/home/liudianru26/project/SylDrift/syldrift/f5_baseline.py", line 69, in <module>
+    main()
+  File "/mnt/beegfs/home/liudianru26/project/SylDrift/syldrift/f5_baseline.py", line 46, in main
+    f5 = F5TTS(model="F5TTS_v1_Base", ckpt_file=ckpt, device="cuda" if torch.cuda.is_available() else "cpu")
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/liudianru26/.conda/envs/syldrift/lib/python3.11/site-packages/f5_tts/api.py", line 52, in __init__
+    self.vocoder = load_vocoder(
+                   ^^^^^^^^^^^^^
+  File "/home/liudianru26/.conda/envs/syldrift/lib/python3.11/site-packages/f5_tts/infer/utils_infer.py", line 109, in load_vocoder
+    config_path = hf_hub_download(repo_id=repo_id, cache_dir=hf_cache_dir, filename="config.yaml")
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/liudianru26/.conda/envs/syldrift/lib/python3.11/site-packages/huggingface_hub/utils/_validators.py", line 89, in _inner_fn
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/liudianru26/.conda/envs/syldrift/lib/python3.11/site-packages/huggingface_hub/utils/_http.py", line 266, in _inner
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/liudianru26/.conda/envs/syldrift/lib/python3.11/site-packages/huggingface_hub/file_download.py", line 1047, in hf_hub_download
+    return _hf_hub_download_to_cache_dir(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/liudianru26/.conda/envs/syldrift/lib/python3.11/site-packages/huggingface_hub/file_download.py", line 1194, in _hf_hub_download_to_cache_dir
+    _raise_on_head_call_error(head_call_error, force_download, local_files_only)
+  File "/home/liudianru26/.conda/envs/syldrift/lib/python3.11/site-packages/huggingface_hub/file_download.py", line 1961, in _raise_on_head_call_error
+    raise LocalEntryNotFoundError(
+huggingface_hub.errors.LocalEntryNotFoundError: An error happened while trying to locate the file on the Hub and we cannot find the requested files in the local cache. Please check your connection and try again or make sure your Internet connection is on.

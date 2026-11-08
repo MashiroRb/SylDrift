@@ -1,0 +1,20 @@
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/mnt/beegfs/home/liudianru26/project/SylDrift/syldrift/eval_set.py", line 127, in <module>
+    main()
+  File "/mnt/beegfs/home/liudianru26/project/SylDrift/syldrift/eval_set.py", line 59, in main
+    model = FlowTTS(dim=a["dim"], depth=a["depth"], text_vocab=max(256, len(vocab))).to(device).eval()
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/beegfs/home/liudianru26/project/SylDrift/syldrift/model.py", line 72, in __init__
+    self.blocks = nn.ModuleList([Block(dim, heads, dim) for _ in range(depth)])
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/beegfs/home/liudianru26/project/SylDrift/syldrift/model.py", line 72, in <listcomp>
+    self.blocks = nn.ModuleList([Block(dim, heads, dim) for _ in range(depth)])
+                                 ^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/beegfs/home/liudianru26/project/SylDrift/syldrift/model.py", line 38, in __init__
+    self.self_attn = nn.MultiheadAttention(dim, heads, batch_first=True)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/liudianru26/.conda/envs/syldrift/lib/python3.11/site-packages/torch/nn/modules/activation.py", line 1071, in __init__
+    self.head_dim * num_heads == self.embed_dim
+AssertionError: embed_dim must be divisible by num_heads

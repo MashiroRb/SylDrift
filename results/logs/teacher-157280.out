@@ -1,0 +1,9 @@
+[teacher] start Sun Nov  8 14:05:50 CST 2026
+Download Vocos from huggingface charactr/vocos-mel-24khz
+
+vocab :  /mnt/beegfs/home/liudianru26/project/SylDrift/third_party/F5-TTS/src/f5_tts/infer/examples/vocab.txt
+token :  custom
+model :  hf_cache/hub/models--SWivid--F5-TTS/snapshots/84e5a410d9cead4de2f847e7c9369a6440bdfaca/F5TTS_v1_Base/model_1250000.safetensors 
+
+total 3000 shard 1/2
+[teacher] exit=0 Sun Nov  8 14:06:14 CST 2026

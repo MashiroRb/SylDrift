@@ -1,0 +1,8 @@
+[sweep] start Sun Nov  8 12:36:27 AM CST 2026
+Download Vocos from huggingface charactr/vocos-mel-24khz
+
+vocab :  /home/liudianru26/.conda/envs/syldrift/lib/python3.11/site-packages/f5_tts/infer/examples/vocab.txt
+token :  custom
+model :  runs/f5_ft/model_last.safetensors 
+
+[sweep] exit=1 Sun Nov  8 12:36:52 AM CST 2026

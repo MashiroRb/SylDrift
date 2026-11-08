@@ -1,0 +1,3 @@
+/home/liudianru26/.conda/envs/syldrift/lib/python3.11/site-packages/transformers/models/whisper/generation_whisper.py:509: FutureWarning: The input name `inputs` is deprecated. Please make sure to use `input_features` instead.
+  warnings.warn(
+You have passed language=chinese, but also have set `forced_decoder_ids` to [[1, None], [2, 50359]] which creates a conflict. `forced_decoder_ids` will be ignored in favor of language=chinese.

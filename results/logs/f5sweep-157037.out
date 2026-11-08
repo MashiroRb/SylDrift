@@ -1,0 +1,81 @@
+[sweep] start Sun Nov  8 12:40:48 AM CST 2026
+Download Vocos from huggingface charactr/vocos-mel-24khz
+
+vocab :  /home/liudianru26/.conda/envs/syldrift/lib/python3.11/site-packages/f5_tts/infer/examples/vocab.txt
+token :  custom
+model :  runs/f5_ft/model_last.pt 
+
+Converting audio...
+Using custom reference text...
+
+ref_text   漂亮的你. 
+gen_text 0 九九归一
+
+
+Generating audio in 1 batches...
+[1] nfe=1 cer=1.750
+Converting audio...
+Using cached preprocessed reference audio...
+Using custom reference text...
+
+ref_text   漂亮的你. 
+gen_text 0 九九归一
+
+
+Generating audio in 1 batches...
+[1] nfe=2 cer=1.750
+Converting audio...
+Using cached preprocessed reference audio...
+Using custom reference text...
+
+ref_text   漂亮的你. 
+gen_text 0 九九归一
+
+
+Generating audio in 1 batches...
+[1] nfe=4 cer=1.750
+Converting audio...
+Using cached preprocessed reference audio...
+Using custom reference text...
+
+ref_text   漂亮的你. 
+gen_text 0 盐马帮
+
+
+Generating audio in 1 batches...
+[2] nfe=1 cer=2.333
+Converting audio...
+Using cached preprocessed reference audio...
+Using custom reference text...
+
+ref_text   漂亮的你. 
+gen_text 0 盐马帮
+
+
+Generating audio in 1 batches...
+[2] nfe=2 cer=2.333
+Converting audio...
+Using cached preprocessed reference audio...
+Using custom reference text...
+
+ref_text   漂亮的你. 
+gen_text 0 盐马帮
+
+
+Generating audio in 1 batches...
+[2] nfe=4 cer=2.333
+{
+  "1": {
+    "cer": 2.041666666666667,
+    "n": 2
+  },
+  "2": {
+    "cer": 2.041666666666667,
+    "n": 2
+  },
+  "4": {
+    "cer": 2.041666666666667,
+    "n": 2
+  }
+}
+[sweep] exit=0 Sun Nov  8 12:41:25 AM CST 2026

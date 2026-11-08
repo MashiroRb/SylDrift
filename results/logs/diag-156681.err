@@ -1,0 +1,9 @@
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/mnt/beegfs/home/liudianru26/project/SylDrift/syldrift/diag.py", line 76, in <module>
+    main()
+  File "/mnt/beegfs/home/liudianru26/project/SylDrift/syldrift/diag.py", line 39, in main
+    model = FlowTTS(dim=a["dim"], depth=a["depth"], text_vocab=max(256, len(vocab))).eval()
+                                                                            ^^^^^
+UnboundLocalError: cannot access local variable 'vocab' where it is not associated with a value

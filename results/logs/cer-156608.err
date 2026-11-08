@@ -1,0 +1,9 @@
+The cache for model files in Transformers v4.22.0 has been updated. Migrating your old cache. This is a one-time only operation. You can interrupt this and resume the migration later on by calling `transformers.utils.move_cache()`.
+0it [00:00, ?it/s]0it [00:00, ?it/s]
+'(MaxRetryError("HTTPSConnectionPool(host='huggingface.co', port=443): Max retries exceeded with url: /openai/whisper-small/resolve/main/config.json (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x7fba722e3cd0>, 'Connection to huggingface.co timed out. (connect timeout=10)'))"), '(Request ID: ddfb2274-c63c-40a0-aacd-147235be578f)')' thrown while requesting HEAD https://huggingface.co/openai/whisper-small/resolve/main/config.json
+Retrying in 1s [Retry 1/5].
+'(MaxRetryError("HTTPSConnectionPool(host='huggingface.co', port=443): Max retries exceeded with url: /openai/whisper-small/resolve/main/config.json (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x7fbaaa2968d0>, 'Connection to huggingface.co timed out. (connect timeout=10)'))"), '(Request ID: 67f48d7c-31fc-49e4-9050-8dc56fad1733)')' thrown while requesting HEAD https://huggingface.co/openai/whisper-small/resolve/main/config.json
+Retrying in 2s [Retry 2/5].
+'(MaxRetryError("HTTPSConnectionPool(host='huggingface.co', port=443): Max retries exceeded with url: /openai/whisper-small/resolve/main/config.json (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x7fbaaa2bf850>, 'Connection to huggingface.co timed out. (connect timeout=10)'))"), '(Request ID: 38727523-1dfa-4ff6-8e01-a19cb373ca91)')' thrown while requesting HEAD https://huggingface.co/openai/whisper-small/resolve/main/config.json
+Retrying in 4s [Retry 3/5].
+slurmstepd-aias-general-1: error: *** JOB 156608 ON aias-general-1 CANCELLED AT 2026-11-07T20:31:16 ***

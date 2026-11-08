@@ -1,0 +1,24 @@
+[teacher] start Sun Nov  8 01:06:26 AM CST 2026
+Download Vocos from huggingface charactr/vocos-mel-24khz
+
+vocab :  /mnt/beegfs/home/liudianru26/project/SylDrift/third_party/F5-TTS/src/f5_tts/infer/examples/vocab.txt
+token :  custom
+model :  hf_cache/hub/models--SWivid--F5-TTS/snapshots/84e5a410d9cead4de2f847e7c9369a6440bdfaca/F5TTS_v1_Base/model_1250000.safetensors 
+
+teacher 100
+teacher 200
+teacher 300
+teacher 400
+teacher 500
+teacher 600
+teacher 700
+teacher 800
+teacher 900
+teacher 1000
+teacher 1100
+teacher 1200
+teacher 1300
+teacher 1400
+teacher 1500
+total 1500
+[teacher] exit=0 Sun Nov  8 01:28:47 AM CST 2026

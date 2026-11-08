@@ -1,0 +1,45 @@
+[slurm] job=156935 Sat Nov  7 11:26:04 PM CST 2026 aias-compute-2
+NVIDIA GeForce RTX 4090, 24564 MiB
+[cudnn] disabled
+[data] 60001 utts, vocab=1838, device=cuda
+[model] 25.4M
+[step    20] fm=15.0099 drift=2.3721 tau=1.000 0.16s/step
+[step    40] fm=17.0507 drift=2.8624 tau=1.000 0.12s/step
+[step    60] fm=14.8546 drift=2.5946 tau=1.000 0.11s/step
+[step    80] fm=10.8877 drift=2.0991 tau=1.000 0.10s/step
+[step   100] fm=8.1003 drift=4.6084 tau=1.000 0.10s/step
+[step   120] fm=6.5971 drift=4.2940 tau=1.000 0.09s/step
+[step   140] fm=8.8279 drift=4.5217 tau=1.000 0.09s/step
+[step   160] fm=6.6815 drift=4.8453 tau=1.000 0.09s/step
+[step   180] fm=6.7915 drift=5.9371 tau=1.000 0.09s/step
+[step   200] fm=6.1948 drift=5.0771 tau=1.000 0.09s/step
+[step   220] fm=4.9776 drift=3.3393 tau=1.000 0.09s/step
+[step   240] fm=4.0053 drift=2.8126 tau=1.000 0.09s/step
+[step   260] fm=3.2852 drift=6.6628 tau=1.000 0.09s/step
+[step   280] fm=3.6985 drift=3.1224 tau=1.000 0.09s/step
+[step   300] fm=3.8264 drift=3.2297 tau=1.000 0.09s/step
+[step   320] fm=2.5459 drift=3.4558 tau=1.000 0.09s/step
+[step   340] fm=3.3777 drift=4.8861 tau=1.000 0.08s/step
+[step   360] fm=4.8582 drift=5.5241 tau=1.000 0.08s/step
+[step   380] fm=2.9890 drift=3.0779 tau=1.000 0.08s/step
+[step   400] fm=4.3408 drift=4.6033 tau=1.000 0.08s/step
+[step   420] fm=3.1885 drift=3.4026 tau=1.000 0.08s/step
+[step   440] fm=4.0585 drift=4.7375 tau=1.000 0.08s/step
+[step   460] fm=2.9820 drift=3.3443 tau=1.000 0.08s/step
+[step   480] fm=3.7615 drift=3.5751 tau=1.000 0.08s/step
+[step   500] fm=3.2421 drift=3.8119 tau=1.000 0.08s/step
+[ckpt] 500
+[step   520] fm=3.4240 drift=2.9507 tau=1.000 0.08s/step
+[step   540] fm=2.5692 drift=4.7107 tau=1.000 0.08s/step
+[step   560] fm=3.7868 drift=4.2913 tau=1.000 0.08s/step
+[step   580] fm=6.6676 drift=6.2225 tau=1.000 0.08s/step
+[step   600] fm=2.7218 drift=4.3452 tau=1.000 0.08s/step
+[step   620] fm=4.5273 drift=4.3046 tau=1.000 0.08s/step
+[step   640] fm=2.4107 drift=5.5244 tau=1.000 0.08s/step
+[step   660] fm=3.3089 drift=5.7414 tau=1.000 0.08s/step
+[step   680] fm=1.9150 drift=3.4327 tau=1.000 0.08s/step
+[step   700] fm=2.6992 drift=8.1089 tau=1.000 0.08s/step
+[step   720] fm=3.4521 drift=2.5508 tau=1.000 0.08s/step
+[step   740] fm=4.4458 drift=4.1387 tau=1.000 0.08s/step
+[step   760] fm=4.0964 drift=3.2399 tau=1.000 0.08s/step
+[step   780] fm=2.1078 drift=3.4147 tau=1.000 0.08s/step

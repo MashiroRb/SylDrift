@@ -1,0 +1,193 @@
+[distill] start Sun Nov  8 14:05:50 CST 2026 aias-compute-01
+Download Vocos from huggingface charactr/vocos-mel-24khz
+
+vocab :  /mnt/beegfs/home/liudianru26/project/SylDrift/third_party/F5-TTS/src/f5_tts/infer/examples/vocab.txt
+token :  custom
+model :  hf_cache/hub/models--SWivid--F5-TTS/snapshots/84e5a410d9cead4de2f847e7c9369a6440bdfaca/F5TTS_v1_Base/model_1250000.safetensors 
+
+[distill] params 337.1M
+[distill] items 3750
+[step 25] distill=1.8203
+[step 50] distill=1.0532
+[step 75] distill=3.2499
+[step 100] distill=2.1007
+[step 125] distill=3.6229
+[step 150] distill=1.3001
+[step 175] distill=0.6508
+[step 200] distill=0.6653
+[step 225] distill=1.0774
+[step 250] distill=0.7471
+[ckpt] 250
+[step 275] distill=3.2427
+[step 300] distill=1.8529
+[step 325] distill=0.9525
+[step 350] distill=2.4797
+[step 375] distill=0.6413
+[step 400] distill=1.4457
+[step 425] distill=1.8338
+[step 450] distill=1.0126
+[step 475] distill=1.1659
+[step 500] distill=0.5896
+[ckpt] 500
+[step 525] distill=0.8548
+[step 550] distill=0.9861
+[step 575] distill=1.6071
+[step 600] distill=1.7275
+[step 625] distill=0.8279
+[step 650] distill=0.9258
+[step 675] distill=1.1475
+[step 700] distill=0.8559
+[step 725] distill=1.0609
+[step 750] distill=0.8358
+[ckpt] 750
+[step 775] distill=0.9079
+[step 800] distill=1.7741
+[step 825] distill=0.9668
+[step 850] distill=0.9599
+[step 875] distill=0.9793
+[step 900] distill=0.4728
+[step 925] distill=1.2034
+[step 950] distill=1.2522
+[step 975] distill=0.7624
+[step 1000] distill=0.3195
+[ckpt] 1000
+[step 1025] distill=0.6778
+[step 1050] distill=0.6561
+[step 1075] distill=1.0963
+[step 1100] distill=0.8128
+[step 1125] distill=0.6026
+[step 1150] distill=0.7947
+[step 1175] distill=1.2244
+[step 1200] distill=2.8449
+[step 1225] distill=0.7516
+[step 1250] distill=0.7939
+[ckpt] 1250
+[step 1275] distill=0.8844
+[step 1300] distill=1.4544
+[step 1325] distill=0.9031
+[step 1350] distill=0.7072
+[step 1375] distill=2.4858
+[step 1400] distill=0.5233
+[step 1425] distill=1.6759
+[step 1450] distill=1.3136
+[step 1475] distill=0.9927
+[step 1500] distill=1.7994
+[ckpt] 1500
+[step 1525] distill=1.3110
+[step 1550] distill=0.9408
+[step 1575] distill=1.1582
+[step 1600] distill=0.7767
+[step 1625] distill=0.7675
+[step 1650] distill=1.5291
+[step 1675] distill=1.5075
+[step 1700] distill=0.9588
+[step 1725] distill=3.9430
+[step 1750] distill=0.6699
+[ckpt] 1750
+[step 1775] distill=0.8049
+[step 1800] distill=1.0902
+[step 1825] distill=0.3727
+[step 1850] distill=0.6861
+[step 1875] distill=1.0049
+[step 1900] distill=0.9063
+[step 1925] distill=0.8583
+[step 1950] distill=0.6898
+[step 1975] distill=0.6601
+[step 2000] distill=0.6326
+[ckpt] 2000
+[step 2025] distill=0.6941
+[step 2050] distill=0.9668
+[step 2075] distill=0.7468
+[step 2100] distill=1.0745
+[step 2125] distill=0.7482
+[step 2150] distill=0.3467
+[step 2175] distill=0.6768
+[step 2200] distill=1.0674
+[step 2225] distill=0.7447
+[step 2250] distill=1.8665
+[ckpt] 2250
+[step 2275] distill=0.7445
+[step 2300] distill=0.9850
+[step 2325] distill=0.6596
+[step 2350] distill=0.4477
+[step 2375] distill=1.2085
+[step 2400] distill=1.6527
+[step 2425] distill=0.9749
+[step 2450] distill=1.3033
+[step 2475] distill=0.5627
+[step 2500] distill=1.2582
+[ckpt] 2500
+[step 2525] distill=1.1797
+[step 2550] distill=0.7164
+[step 2575] distill=1.0659
+[step 2600] distill=0.8544
+[step 2625] distill=0.8087
+[step 2650] distill=0.4465
+[step 2675] distill=0.6245
+[step 2700] distill=1.1300
+[step 2725] distill=1.8793
+[step 2750] distill=0.9654
+[ckpt] 2750
+[step 2775] distill=0.6890
+[step 2800] distill=0.9124
+[step 2825] distill=2.0402
+[step 2850] distill=0.7456
+[step 2875] distill=0.6154
+[step 2900] distill=1.3062
+[step 2925] distill=0.4715
+[step 2950] distill=1.1443
+[step 2975] distill=0.9364
+[step 3000] distill=0.7834
+[ckpt] 3000
+[step 3025] distill=0.6053
+[step 3050] distill=1.1827
+[step 3075] distill=1.0113
+[step 3100] distill=0.9235
+[step 3125] distill=0.5539
+[step 3150] distill=1.0253
+[step 3175] distill=1.0009
+[step 3200] distill=0.8568
+[step 3225] distill=1.2746
+[step 3250] distill=1.0988
+[ckpt] 3250
+[step 3275] distill=1.4259
+[step 3300] distill=0.5395
+[step 3325] distill=0.6751
+[step 3350] distill=1.1042
+[step 3375] distill=0.7270
+[step 3400] distill=0.7631
+[step 3425] distill=0.5332
+[step 3450] distill=0.6952
+[step 3475] distill=0.6822
+[step 3500] distill=0.5041
+[ckpt] 3500
+[step 3525] distill=0.9513
+[step 3550] distill=0.5081
+[step 3575] distill=0.7277
+[step 3600] distill=2.7717
+[step 3625] distill=0.8451
+[step 3650] distill=0.8092
+[step 3675] distill=1.9710
+[step 3700] distill=0.9577
+[step 3725] distill=0.7862
+[step 3750] distill=1.0741
+[ckpt] 3750
+[step 3775] distill=1.0652
+[step 3800] distill=0.6699
+[step 3825] distill=0.5225
+[step 3850] distill=1.1495
+[step 3875] distill=1.8280
+[step 3900] distill=0.9117
+[step 3925] distill=0.9433
+[step 3950] distill=0.9716
+[step 3975] distill=1.7649
+[step 4000] distill=0.8875
+[ckpt] 4000
+[step 4025] distill=0.9482
+[step 4050] distill=0.9320
+[step 4075] distill=0.8162
+[step 4100] distill=0.6874
+[step 4125] distill=0.9733
+[step 4150] distill=2.1983
+[step 4175] distill=0.6030
+[step 4200] distill=0.6986

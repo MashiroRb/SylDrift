@@ -1,0 +1,26 @@
+[deval] start Sun Nov  8 01:42:00 PM CST 2026
+Download Vocos from huggingface charactr/vocos-mel-24khz
+
+vocab :  /mnt/beegfs/home/liudianru26/project/SylDrift/third_party/F5-TTS/src/f5_tts/infer/examples/vocab.txt
+token :  custom
+model :  hf_cache/hub/models--SWivid--F5-TTS/snapshots/84e5a410d9cead4de2f847e7c9369a6440bdfaca/F5TTS_v1_Base/model_1250000.safetensors 
+
+[eval] loaded runs/f5_dist1/model_last.pt missing=0 unexpected=0
+[0] cer=1.000 ref=北京万科总经理刘肖的观点极具代表性 hyp=音乐
+[1] cer=1.000 ref=四季 hyp=謝謝
+[2] cer=1.000 ref=它们都是售价在七万元以下的 hyp=音乐
+[3] cer=1.000 ref=目前中国正在修订关于充电的五项重要国 hyp=字幕by索兰娅
+[4] cer=1.000 ref=广州工地塔吊吊臂坠落致四死负责人已被 hyp=字幕by索兰娅
+[5] cer=1.000 ref=也面临很多信息壁壁垒的问题 hyp=字幕by索兰娅
+[6] cer=1.000 ref=正是面临的种种问题 hyp=字幕by索兰娅
+[7] cer=1.000 ref=要加快建设宽带融合安全的信息网络基础 hyp=字幕by索兰娅
+[8] cer=1.000 ref=你有预订房间吗先生 hyp=【字幕製作人】
+[9] cer=1.000 ref=索尼影业死死鸭子嘴硬的于上周发表声明 hyp=【音乐】
+[10] cer=1.000 ref=杰森可是建筑大师 hyp=字幕by索兰娅
+[11] cer=1.000 ref=育才幼儿园黄孝河路 hyp=字幕by索兰娅
+{
+  "tag": "dist1",
+  "n": 12,
+  "cer": 1.0
+}
+[deval] exit=0 Sun Nov  8 01:43:17 PM CST 2026

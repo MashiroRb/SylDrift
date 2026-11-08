@@ -1,0 +1,63 @@
+[distill] start Sun Nov  8 01:30:24 PM CST 2026 aias-compute-2
+Download Vocos from huggingface charactr/vocos-mel-24khz
+
+vocab :  /mnt/beegfs/home/liudianru26/project/SylDrift/third_party/F5-TTS/src/f5_tts/infer/examples/vocab.txt
+token :  custom
+model :  hf_cache/hub/models--SWivid--F5-TTS/snapshots/84e5a410d9cead4de2f847e7c9369a6440bdfaca/F5TTS_v1_Base/model_1250000.safetensors 
+
+[distill] params 337.1M
+[distill] items 2013
+[step 25] distill=8.0904
+[step 50] distill=8.3253
+[step 75] distill=4.0744
+[step 100] distill=3.9324
+[step 125] distill=7.1022
+[step 150] distill=3.4157
+[step 175] distill=3.8586
+[step 200] distill=3.1135
+[step 225] distill=3.2057
+[step 250] distill=2.8127
+[ckpt] 250
+[step 275] distill=3.9409
+[step 300] distill=3.0973
+[step 325] distill=2.6438
+[step 350] distill=3.6078
+[step 375] distill=4.1826
+[step 400] distill=2.9284
+[step 425] distill=2.9563
+[step 450] distill=3.2480
+[step 475] distill=3.1376
+[step 500] distill=2.9409
+[ckpt] 500
+[step 525] distill=3.7893
+[step 550] distill=3.5512
+[step 575] distill=1.9238
+[step 600] distill=3.4798
+[step 625] distill=2.8016
+[step 650] distill=2.6621
+[step 675] distill=2.3398
+[step 700] distill=2.6359
+[step 725] distill=2.8938
+[step 750] distill=6.0724
+[ckpt] 750
+[step 775] distill=2.7945
+[step 800] distill=5.4614
+[step 825] distill=2.5340
+[step 850] distill=3.4899
+[step 875] distill=2.7878
+[step 900] distill=4.6549
+[step 925] distill=3.6909
+[step 950] distill=2.2607
+[step 975] distill=2.8688
+[step 1000] distill=2.6992
+[ckpt] 1000
+[step 1025] distill=3.6353
+[step 1050] distill=2.6306
+[step 1075] distill=2.4478
+[step 1100] distill=6.1055
+[step 1125] distill=2.6942
+[step 1150] distill=2.5252
+[step 1175] distill=2.8814
+[step 1200] distill=2.6683
+[distill] done
+[distill] exit=0 Sun Nov  8 01:35:22 PM CST 2026

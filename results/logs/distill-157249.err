@@ -1,0 +1,17 @@
+/home/liudianru26/.conda/envs/syldrift/lib/python3.11/site-packages/pydub/utils.py:170: RuntimeWarning: Couldn't find ffmpeg or avconv - defaulting to ffmpeg, but may not work
+  warn("Couldn't find ffmpeg or avconv - defaulting to ffmpeg, but may not work", RuntimeWarning)
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/mnt/beegfs/home/liudianru26/project/SylDrift/syldrift/f5_distill.py", line 127, in <module>
+    main()
+  File "/mnt/beegfs/home/liudianru26/project/SylDrift/syldrift/f5_distill.py", line 110, in main
+    loss.backward()
+  File "/home/liudianru26/.conda/envs/syldrift/lib/python3.11/site-packages/torch/_tensor.py", line 581, in backward
+    torch.autograd.backward(
+  File "/home/liudianru26/.conda/envs/syldrift/lib/python3.11/site-packages/torch/autograd/__init__.py", line 347, in backward
+    _engine_run_backward(
+  File "/home/liudianru26/.conda/envs/syldrift/lib/python3.11/site-packages/torch/autograd/graph.py", line 825, in _engine_run_backward
+    return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: element 0 of tensors does not require grad and does not have a grad_fn

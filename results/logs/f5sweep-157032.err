@@ -1,0 +1,23 @@
+/home/liudianru26/.conda/envs/syldrift/lib/python3.11/site-packages/pydub/utils.py:170: RuntimeWarning: Couldn't find ffmpeg or avconv - defaulting to ffmpeg, but may not work
+  warn("Couldn't find ffmpeg or avconv - defaulting to ffmpeg, but may not work", RuntimeWarning)
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/mnt/beegfs/home/liudianru26/project/SylDrift/syldrift/f5_sweep.py", line 85, in <module>
+    main()
+  File "/mnt/beegfs/home/liudianru26/project/SylDrift/syldrift/f5_sweep.py", line 47, in main
+    f5 = F5TTS(model="F5TTS_v1_Base", ckpt_file=ckpt,
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/liudianru26/.conda/envs/syldrift/lib/python3.11/site-packages/f5_tts/api.py", line 73, in __init__
+    self.ema_model = load_model(
+                     ^^^^^^^^^^^
+  File "/home/liudianru26/.conda/envs/syldrift/lib/python3.11/site-packages/f5_tts/infer/utils_infer.py", line 267, in load_model
+    model = load_checkpoint(model, ckpt_path, device, dtype=dtype, use_ema=use_ema)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/liudianru26/.conda/envs/syldrift/lib/python3.11/site-packages/f5_tts/infer/utils_infer.py", line 198, in load_checkpoint
+    checkpoint = load_file(ckpt_path, device=device)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/liudianru26/.conda/envs/syldrift/lib/python3.11/site-packages/safetensors/torch.py", line 359, in load_file
+    with safe_open(filename, framework="pt", device=device, backend=backend) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+safetensors._safetensors_rust.SafetensorError: Error while deserializing header: header too large

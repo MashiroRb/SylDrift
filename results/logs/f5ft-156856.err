@@ -1,0 +1,3 @@
+/home/liudianru26/.conda/envs/syldrift/lib/python3.11/site-packages/pydub/utils.py:170: RuntimeWarning: Couldn't find ffmpeg or avconv - defaulting to ffmpeg, but may not work
+  warn("Couldn't find ffmpeg or avconv - defaulting to ffmpeg, but may not work", RuntimeWarning)
+slurmstepd-aias-compute-01: error: *** JOB 156856 ON aias-compute-01 CANCELLED AT 2026-11-07T22:58:52 ***

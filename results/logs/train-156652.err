@@ -1,0 +1,39 @@
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/mnt/beegfs/home/liudianru26/project/SylDrift/syldrift/train_real.py", line 156, in <module>
+    main()
+  File "/mnt/beegfs/home/liudianru26/project/SylDrift/syldrift/train_real.py", line 109, in main
+    v = model(x_t, t, text_ids, spk_ref, frame_ids=frame_ids_t)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/liudianru26/.conda/envs/syldrift/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1736, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/liudianru26/.conda/envs/syldrift/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1747, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/beegfs/home/liudianru26/project/SylDrift/syldrift/model.py", line 88, in forward
+    txt = (txt + self.text_conv(txt)).transpose(1, 2)
+                 ^^^^^^^^^^^^^^^^^^^
+  File "/home/liudianru26/.conda/envs/syldrift/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1736, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/liudianru26/.conda/envs/syldrift/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1747, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/liudianru26/.conda/envs/syldrift/lib/python3.11/site-packages/torch/nn/modules/container.py", line 250, in forward
+    input = module(input)
+            ^^^^^^^^^^^^^
+  File "/home/liudianru26/.conda/envs/syldrift/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1736, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/liudianru26/.conda/envs/syldrift/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1747, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/liudianru26/.conda/envs/syldrift/lib/python3.11/site-packages/torch/nn/modules/conv.py", line 375, in forward
+    return self._conv_forward(input, self.weight, self.bias)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/liudianru26/.conda/envs/syldrift/lib/python3.11/site-packages/torch/nn/modules/conv.py", line 370, in _conv_forward
+    return F.conv1d(
+           ^^^^^^^^^
+RuntimeError: cuDNN error: CUDNN_STATUS_INTERNAL_ERROR

@@ -1,0 +1,77 @@
+[distill] start Sun Nov  8 01:50:34 PM CST 2026 aias-compute-2
+Download Vocos from huggingface charactr/vocos-mel-24khz
+
+vocab :  /mnt/beegfs/home/liudianru26/project/SylDrift/third_party/F5-TTS/src/f5_tts/infer/examples/vocab.txt
+token :  custom
+model :  hf_cache/hub/models--SWivid--F5-TTS/snapshots/84e5a410d9cead4de2f847e7c9369a6440bdfaca/F5TTS_v1_Base/model_1250000.safetensors 
+
+[distill] params 337.1M
+[distill] items 3458
+[step 25] distill=1.6241
+[step 50] distill=0.7967
+[step 75] distill=1.9598
+[step 100] distill=0.7668
+[step 125] distill=1.0945
+[step 150] distill=0.8853
+[step 175] distill=0.7884
+[step 200] distill=2.6810
+[step 225] distill=1.1946
+[step 250] distill=1.0946
+[ckpt] 250
+[step 275] distill=1.7088
+[step 300] distill=0.6353
+[step 325] distill=0.9199
+[step 350] distill=0.7108
+[step 375] distill=1.6060
+[step 400] distill=8.1741
+[step 425] distill=1.0621
+[step 450] distill=0.7793
+[step 475] distill=1.2586
+[step 500] distill=1.0039
+[ckpt] 500
+[step 525] distill=0.8835
+[step 550] distill=1.5009
+[step 575] distill=1.2767
+[step 600] distill=1.2664
+[step 625] distill=1.4251
+[step 650] distill=0.5511
+[step 675] distill=1.8839
+[step 700] distill=1.5327
+[step 725] distill=1.3666
+[step 750] distill=1.1823
+[ckpt] 750
+[step 775] distill=1.2003
+[step 800] distill=0.9639
+[step 825] distill=0.9570
+[step 850] distill=2.5196
+[step 875] distill=0.5895
+[step 900] distill=1.0062
+[step 925] distill=0.9565
+[step 950] distill=0.5875
+[step 975] distill=1.0662
+[step 1000] distill=2.0644
+[ckpt] 1000
+[step 1025] distill=0.6650
+[step 1050] distill=1.3156
+[step 1075] distill=0.5846
+[step 1100] distill=0.4765
+[step 1125] distill=1.0541
+[step 1150] distill=1.2589
+[step 1175] distill=2.2288
+[step 1200] distill=0.9282
+[step 1225] distill=0.5239
+[step 1250] distill=1.2908
+[ckpt] 1250
+[step 1275] distill=0.7840
+[step 1300] distill=0.9126
+[step 1325] distill=1.3077
+[step 1350] distill=0.5614
+[step 1375] distill=0.5656
+[step 1400] distill=0.4131
+[step 1425] distill=0.7646
+[step 1450] distill=0.8785
+[step 1475] distill=1.2488
+[step 1500] distill=0.9566
+[ckpt] 1500
+[distill] done
+[distill] exit=0 Sun Nov  8 01:57:29 PM CST 2026

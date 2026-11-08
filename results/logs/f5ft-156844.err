@@ -1,0 +1,20 @@
+/home/liudianru26/.conda/envs/syldrift/lib/python3.11/site-packages/pydub/utils.py:170: RuntimeWarning: Couldn't find ffmpeg or avconv - defaulting to ffmpeg, but may not work
+  warn("Couldn't find ffmpeg or avconv - defaulting to ffmpeg, but may not work", RuntimeWarning)
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/mnt/beegfs/home/liudianru26/project/SylDrift/syldrift/f5_finetune.py", line 154, in <module>
+    main()
+  File "/mnt/beegfs/home/liudianru26/project/SylDrift/syldrift/f5_finetune.py", line 130, in main
+    x1 = one_step(cfm, mel.shape, ids, device)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/beegfs/home/liudianru26/project/SylDrift/syldrift/f5_finetune.py", line 74, in one_step
+    v = cfm.transformer(x, t, text=ids)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/liudianru26/.conda/envs/syldrift/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1736, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/liudianru26/.conda/envs/syldrift/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1747, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: DiT.forward() missing 1 required positional argument: 'time'

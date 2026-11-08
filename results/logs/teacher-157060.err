@@ -1,0 +1,7 @@
+/home/liudianru26/.conda/envs/syldrift/lib/python3.11/site-packages/pydub/utils.py:170: RuntimeWarning: Couldn't find ffmpeg or avconv - defaulting to ffmpeg, but may not work
+  warn("Couldn't find ffmpeg or avconv - defaulting to ffmpeg, but may not work", RuntimeWarning)
+Traceback (most recent call last):
+  File "/mnt/beegfs/home/liudianru26/project/SylDrift/make_teacher.py", line 44, in <module>
+    np.save(dst, out[0, -dur:].float().cpu().numpy().astype(np.float16))
+                 ~~~^^^^^^^^^^
+TypeError: tuple indices must be integers or slices, not tuple

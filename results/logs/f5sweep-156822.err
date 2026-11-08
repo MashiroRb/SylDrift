@@ -1,0 +1,24 @@
+/home/liudianru26/.conda/envs/syldrift/lib/python3.11/site-packages/pydub/utils.py:170: RuntimeWarning: Couldn't find ffmpeg or avconv - defaulting to ffmpeg, but may not work
+  warn("Couldn't find ffmpeg or avconv - defaulting to ffmpeg, but may not work", RuntimeWarning)
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/mnt/beegfs/home/liudianru26/project/SylDrift/syldrift/f5_sweep.py", line 83, in <module>
+    main()
+  File "/mnt/beegfs/home/liudianru26/project/SylDrift/syldrift/f5_sweep.py", line 41, in main
+    from f5_tts.api import F5TTS
+  File "/home/liudianru26/.conda/envs/syldrift/lib/python3.11/site-packages/f5_tts/api.py", line 12, in <module>
+    from f5_tts.infer.utils_infer import (
+  File "/home/liudianru26/.conda/envs/syldrift/lib/python3.11/site-packages/f5_tts/infer/utils_infer.py", line 32, in <module>
+    from f5_tts.model import CFM
+  File "/home/liudianru26/.conda/envs/syldrift/lib/python3.11/site-packages/f5_tts/model/__init__.py", line 5, in <module>
+    from f5_tts.model.trainer import Trainer
+  File "/home/liudianru26/.conda/envs/syldrift/lib/python3.11/site-packages/f5_tts/model/trainer.py", line 19, in <module>
+    from f5_tts.model.dataset import DynamicBatchSampler, collate_fn
+  File "/home/liudianru26/.conda/envs/syldrift/lib/python3.11/site-packages/f5_tts/model/dataset.py", line 7, in <module>
+    from datasets import Dataset as Dataset_
+  File "/home/liudianru26/.conda/envs/syldrift/lib/python3.11/site-packages/datasets/__init__.py", line 17, in <module>
+    from .arrow_dataset import Column, Dataset
+  File "/home/liudianru26/.conda/envs/syldrift/lib/python3.11/site-packages/datasets/arrow_dataset.py", line 74, in <module>
+    from huggingface_hub.errors import BucketNotFoundError
+ImportError: cannot import name 'BucketNotFoundError' from 'huggingface_hub.errors' (/home/liudianru26/.conda/envs/syldrift/lib/python3.11/site-packages/huggingface_hub/errors.py)

@@ -1,0 +1,53 @@
+Traceback (most recent call last):
+  File "/home/liudianru26/.conda/envs/syldrift/lib/python3.11/site-packages/transformers/pipelines/audio_utils.py", line 34, in ffmpeg_read
+    with subprocess.Popen(ffmpeg_command, stdin=subprocess.PIPE, stdout=subprocess.PIPE) as ffmpeg_process:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/liudianru26/.conda/envs/syldrift/lib/python3.11/subprocess.py", line 1026, in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+  File "/home/liudianru26/.conda/envs/syldrift/lib/python3.11/subprocess.py", line 1955, in _execute_child
+    raise child_exception_type(errno_num, err_msg, err_filename)
+FileNotFoundError: [Errno 2] No such file or directory: 'ffmpeg'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/mnt/beegfs/home/liudianru26/project/SylDrift/syldrift/eval_set.py", line 102, in <module>
+    main()
+  File "/mnt/beegfs/home/liudianru26/project/SylDrift/syldrift/eval_set.py", line 81, in main
+    hyp = asr(p)
+          ^^^^^^
+  File "/mnt/beegfs/home/liudianru26/project/SylDrift/syldrift/eval.py", line 47, in __call__
+    out = self.pipe(wav_path, generate_kwargs={"language": "chinese"})
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/liudianru26/.conda/envs/syldrift/lib/python3.11/site-packages/transformers/pipelines/automatic_speech_recognition.py", line 283, in __call__
+    return super().__call__(inputs, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/liudianru26/.conda/envs/syldrift/lib/python3.11/site-packages/transformers/pipelines/base.py", line 1294, in __call__
+    return next(
+           ^^^^^
+  File "/home/liudianru26/.conda/envs/syldrift/lib/python3.11/site-packages/transformers/pipelines/pt_utils.py", line 124, in __next__
+    item = next(self.iterator)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/liudianru26/.conda/envs/syldrift/lib/python3.11/site-packages/transformers/pipelines/pt_utils.py", line 269, in __next__
+    processed = self.infer(next(self.iterator), **self.params)
+                           ^^^^^^^^^^^^^^^^^^^
+  File "/home/liudianru26/.conda/envs/syldrift/lib/python3.11/site-packages/torch/utils/data/dataloader.py", line 701, in __next__
+    data = self._next_data()
+           ^^^^^^^^^^^^^^^^^
+  File "/home/liudianru26/.conda/envs/syldrift/lib/python3.11/site-packages/torch/utils/data/dataloader.py", line 757, in _next_data
+    data = self._dataset_fetcher.fetch(index)  # may raise StopIteration
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/liudianru26/.conda/envs/syldrift/lib/python3.11/site-packages/torch/utils/data/_utils/fetch.py", line 33, in fetch
+    data.append(next(self.dataset_iter))
+                ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/liudianru26/.conda/envs/syldrift/lib/python3.11/site-packages/transformers/pipelines/pt_utils.py", line 186, in __next__
+    processed = next(self.subiterator)
+                ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/liudianru26/.conda/envs/syldrift/lib/python3.11/site-packages/transformers/pipelines/automatic_speech_recognition.py", line 364, in preprocess
+    inputs = ffmpeg_read(inputs, self.feature_extractor.sampling_rate)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/liudianru26/.conda/envs/syldrift/lib/python3.11/site-packages/transformers/pipelines/audio_utils.py", line 37, in ffmpeg_read
+    raise ValueError("ffmpeg was not found but is required to load audio files from filename") from error
+ValueError: ffmpeg was not found but is required to load audio files from filename

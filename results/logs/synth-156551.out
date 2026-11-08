@@ -1,0 +1,3 @@
+[synth] runs/mini/sample.wav  frames=84 steps=1 dur=0.96s
+-rw-r--r-- 1 liudianru26 liudianru26 42K Nov  7 19:25 runs/mini/sample.wav
+[slurm] exit=0

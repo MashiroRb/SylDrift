@@ -1,0 +1,4 @@
+[slurm] job=156629 Sat Nov  7 08:52:05 PM CST 2026 aias-compute-5
+NVIDIA A800 80GB PCIe, 81920 MiB
+[data] 24055 utts, vocab=33, device=cuda
+[slurm] exit=1 Sat Nov  7 08:52:11 PM CST 2026

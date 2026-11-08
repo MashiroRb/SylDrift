@@ -1,0 +1,54 @@
+[manifest] start Sat Nov  7 20:03:12 HKT 2026 host=aias-general-1 cores=12
+[manifest] 24764 transcripts
+[manifest] 24071 wavs
+[manifest] 24062 jobs, workers=12
+  shard 1/48 -> 501
+  shard 2/48 -> 1003
+  shard 3/48 -> 1505
+  shard 4/48 -> 2007
+  shard 5/48 -> 2509
+  shard 6/48 -> 3011
+  shard 7/48 -> 3513
+  shard 8/48 -> 4015
+  shard 9/48 -> 4517
+  shard 10/48 -> 5019
+  shard 11/48 -> 5521
+  shard 12/48 -> 6023
+  shard 13/48 -> 6525
+  shard 14/48 -> 7026
+  shard 15/48 -> 7528
+  shard 16/48 -> 8029
+  shard 17/48 -> 8530
+  shard 18/48 -> 9031
+  shard 19/48 -> 9532
+  shard 20/48 -> 10033
+  shard 21/48 -> 10534
+  shard 22/48 -> 11034
+  shard 23/48 -> 11535
+  shard 24/48 -> 12036
+  shard 25/48 -> 12537
+  shard 26/48 -> 13038
+  shard 27/48 -> 13539
+  shard 28/48 -> 14039
+  shard 29/48 -> 14540
+  shard 30/48 -> 15041
+  shard 31/48 -> 15542
+  shard 32/48 -> 16041
+  shard 33/48 -> 16542
+  shard 34/48 -> 17042
+  shard 35/48 -> 17543
+  shard 36/48 -> 18044
+  shard 37/48 -> 18545
+  shard 38/48 -> 19045
+  shard 39/48 -> 19546
+  shard 40/48 -> 20047
+  shard 41/48 -> 20548
+  shard 42/48 -> 21049
+  shard 43/48 -> 21550
+  shard 44/48 -> 22051
+  shard 45/48 -> 22552
+  shard 46/48 -> 23053
+  shard 47/48 -> 23554
+  shard 48/48 -> 24055
+[manifest] wrote 24055 -> data/manifest_test.jsonl
+[manifest] exit=0 Sat Nov  7 20:04:11 HKT 2026

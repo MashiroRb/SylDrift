@@ -1,0 +1,24 @@
+[distill] start Sun Nov  8 13:46:33 CST 2026 aias-compute-4
+Download Vocos from huggingface charactr/vocos-mel-24khz
+
+vocab :  /mnt/beegfs/home/liudianru26/project/SylDrift/third_party/F5-TTS/src/f5_tts/infer/examples/vocab.txt
+token :  custom
+model :  hf_cache/hub/models--SWivid--F5-TTS/snapshots/84e5a410d9cead4de2f847e7c9369a6440bdfaca/F5TTS_v1_Base/model_1250000.safetensors 
+
+[distill] params 337.1M
+[distill] items 3113
+[step 25] distill=1.7042
+[step 50] distill=1.1235
+[step 75] distill=0.7276
+[step 100] distill=1.8930
+[step 125] distill=0.8364
+[step 150] distill=2.8732
+[step 175] distill=1.1920
+[step 200] distill=0.7099
+[step 225] distill=0.9657
+[step 250] distill=1.4224
+[ckpt] 250
+[step 275] distill=1.2441
+[step 300] distill=0.7356
+[distill] done
+[distill] exit=0 Sun Nov  8 13:47:53 CST 2026
