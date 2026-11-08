@@ -1,0 +1,51 @@
+[
+  {
+    "model": "F5 baseline",
+    "nfe": 32,
+    "n": 30,
+    "cer": 0.155,
+    "len_ratio": 1.002
+  },
+  {
+    "model": "F5 baseline",
+    "nfe": 4,
+    "n": 30,
+    "cer": 2.278,
+    "len_ratio": 2.671
+  },
+  {
+    "model": "SylDrift lam0.3 @400",
+    "nfe": 4,
+    "n": 30,
+    "cer": 0.511,
+    "len_ratio": 0.815
+  },
+  {
+    "model": "SylDrift lam0.3 @800",
+    "nfe": 4,
+    "n": 30,
+    "cer": 0.357,
+    "len_ratio": 0.903
+  },
+  {
+    "model": "SylDrift lam0.3 @800",
+    "nfe": 2,
+    "n": 30,
+    "cer": 3.638,
+    "len_ratio": 3.424
+  },
+  {
+    "model": "SylDrift lam0.05 @400",
+    "nfe": 4,
+    "n": 30,
+    "cer": 0.481,
+    "len_ratio": 0.854
+  },
+  {
+    "model": "SylDrift lam0.1 @400",
+    "nfe": 4,
+    "n": 30,
+    "cer": 1.5,
+    "len_ratio": 1.86
+  }
+]
