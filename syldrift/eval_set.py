@@ -56,7 +56,8 @@ def main():
     a = blob["args"]
     vocab = blob.get("vocab") or json.load(
         open(os.path.join(os.path.dirname(args.ckpt), "vocab.json")))
-    model = FlowTTS(dim=a["dim"], depth=a["depth"], text_vocab=max(256, len(vocab))).to(device).eval()
+    model = FlowTTS(dim=a["dim"], depth=a["depth"], heads=a.get("heads", 6),
+                    text_vocab=max(256, len(vocab))).to(device).eval()
     model.load_state_dict(blob["model"])
 
     if args.manifest:
