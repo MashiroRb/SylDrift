@@ -1,0 +1,2 @@
+taskset: failed to set pid 2953269's affinity: Invalid argument
+done

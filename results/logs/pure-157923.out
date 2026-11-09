@@ -1,0 +1,79 @@
+[pure] start Mon Nov  9 16:49:41 CST 2026 nfe=4
+Download Vocos from huggingface charactr/vocos-mel-24khz
+
+vocab :  /mnt/beegfs/home/liudianru26/project/SylDrift/third_party/F5-TTS/src/f5_tts/infer/examples/vocab.txt
+token :  custom
+model :  hf_cache/hub/models--SWivid--F5-TTS/snapshots/84e5a410d9cead4de2f847e7c9369a6440bdfaca/F5TTS_v1_Base/model_1250000.safetensors 
+
+[mem] gradient checkpointing ON
+# pure-drift, no teacher, no regression term | nfe=4 beta=0.5 lr=1e-05 steps=3000
+[pool] cached 531 syllables
+[data] 6000 items
+[step 50] L_syl=0.5607 L_stat=2.8620 tau=1.000 len_ratio(mel)=0.77
+[step 100] L_syl=0.5853 L_stat=2.6766 tau=1.000 len_ratio(mel)=0.80
+[step 150] L_syl=0.4171 L_stat=0.7888 tau=1.001 len_ratio(mel)=0.79
+[step 200] L_syl=0.1818 L_stat=1.2009 tau=1.001 len_ratio(mel)=0.84
+[step 250] L_syl=0.1824 L_stat=0.4899 tau=1.002 len_ratio(mel)=0.87
+[step 300] L_syl=0.1931 L_stat=0.3591 tau=1.002 len_ratio(mel)=0.80
+[step 350] L_syl=0.1302 L_stat=0.4966 tau=1.003 len_ratio(mel)=0.84
+[step 400] L_syl=0.2627 L_stat=0.4373 tau=1.003 len_ratio(mel)=0.72
+[step 450] L_syl=0.2152 L_stat=1.9476 tau=1.004 len_ratio(mel)=0.66
+[step 500] L_syl=0.2183 L_stat=0.2372 tau=1.004 len_ratio(mel)=0.85
+[ckpt] 500
+[step 550] L_syl=0.2443 L_stat=1.0952 tau=1.005 len_ratio(mel)=0.75
+[step 600] L_syl=0.1534 L_stat=0.2526 tau=1.005 len_ratio(mel)=0.82
+[step 650] L_syl=0.3394 L_stat=0.2117 tau=1.005 len_ratio(mel)=0.77
+[step 700] L_syl=0.0920 L_stat=0.6798 tau=1.006 len_ratio(mel)=0.87
+[step 750] L_syl=0.0785 L_stat=0.5044 tau=1.006 len_ratio(mel)=0.87
+[step 800] L_syl=0.0786 L_stat=1.7793 tau=1.007 len_ratio(mel)=0.82
+[step 850] L_syl=0.0911 L_stat=0.9425 tau=1.007 len_ratio(mel)=0.85
+[step 900] L_syl=0.1593 L_stat=0.8850 tau=1.008 len_ratio(mel)=0.86
+[step 950] L_syl=0.0997 L_stat=0.0984 tau=1.008 len_ratio(mel)=0.83
+[step 1000] L_syl=0.1305 L_stat=0.2099 tau=1.008 len_ratio(mel)=0.82
+[ckpt] 1000
+[step 1050] L_syl=0.0764 L_stat=0.6536 tau=1.009 len_ratio(mel)=0.83
+[step 1100] L_syl=0.0876 L_stat=0.6903 tau=1.009 len_ratio(mel)=0.81
+[step 1150] L_syl=0.2011 L_stat=1.1824 tau=1.009 len_ratio(mel)=0.81
+[step 1200] L_syl=0.0887 L_stat=0.1341 tau=1.010 len_ratio(mel)=0.85
+[step 1250] L_syl=0.0685 L_stat=0.1170 tau=1.010 len_ratio(mel)=0.88
+[step 1300] L_syl=0.1361 L_stat=0.3802 tau=1.010 len_ratio(mel)=0.78
+[step 1350] L_syl=0.0724 L_stat=0.4266 tau=1.011 len_ratio(mel)=0.85
+[step 1400] L_syl=0.1227 L_stat=0.1480 tau=1.011 len_ratio(mel)=0.82
+[step 1450] L_syl=0.0704 L_stat=0.1659 tau=1.011 len_ratio(mel)=0.86
+[step 1500] L_syl=0.1866 L_stat=0.9238 tau=1.012 len_ratio(mel)=0.74
+[ckpt] 1500
+[step 1550] L_syl=0.0925 L_stat=0.0992 tau=1.012 len_ratio(mel)=0.86
+[step 1600] L_syl=0.0536 L_stat=0.1998 tau=1.012 len_ratio(mel)=0.86
+[step 1650] L_syl=0.1245 L_stat=0.4076 tau=1.012 len_ratio(mel)=0.78
+[step 1700] L_syl=0.2481 L_stat=0.7589 tau=1.012 len_ratio(mel)=0.73
+[step 1750] L_syl=0.1277 L_stat=0.2232 tau=1.013 len_ratio(mel)=0.79
+[step 1800] L_syl=0.0936 L_stat=0.1217 tau=1.013 len_ratio(mel)=0.88
+[step 1850] L_syl=0.1547 L_stat=0.1814 tau=1.013 len_ratio(mel)=0.80
+[step 1900] L_syl=0.1335 L_stat=0.4068 tau=1.013 len_ratio(mel)=0.74
+[step 1950] L_syl=0.1174 L_stat=0.3586 tau=1.013 len_ratio(mel)=0.81
+[step 2000] L_syl=0.1441 L_stat=0.1890 tau=1.013 len_ratio(mel)=0.76
+[ckpt] 2000
+[step 2050] L_syl=0.0894 L_stat=0.9552 tau=1.014 len_ratio(mel)=0.85
+[step 2100] L_syl=0.0859 L_stat=0.1483 tau=1.014 len_ratio(mel)=0.79
+[step 2150] L_syl=0.1370 L_stat=0.8755 tau=1.014 len_ratio(mel)=0.80
+[step 2200] L_syl=0.1540 L_stat=0.4183 tau=1.014 len_ratio(mel)=0.72
+[step 2250] L_syl=0.1024 L_stat=0.9766 tau=1.014 len_ratio(mel)=0.82
+[step 2300] L_syl=0.1398 L_stat=0.4822 tau=1.014 len_ratio(mel)=0.81
+[step 2350] L_syl=0.1372 L_stat=0.3661 tau=1.014 len_ratio(mel)=0.80
+[step 2400] L_syl=0.1519 L_stat=0.4092 tau=1.014 len_ratio(mel)=0.74
+[step 2450] L_syl=0.2092 L_stat=1.2186 tau=1.014 len_ratio(mel)=0.73
+[step 2500] L_syl=0.1829 L_stat=0.2865 tau=1.014 len_ratio(mel)=0.71
+[ckpt] 2500
+[step 2550] L_syl=0.1112 L_stat=0.0730 tau=1.014 len_ratio(mel)=0.82
+[step 2600] L_syl=0.0910 L_stat=2.5378 tau=1.014 len_ratio(mel)=0.82
+[step 2650] L_syl=0.3647 L_stat=0.3988 tau=1.014 len_ratio(mel)=0.71
+[step 2700] L_syl=0.0991 L_stat=1.4345 tau=1.014 len_ratio(mel)=0.81
+[step 2750] L_syl=0.2217 L_stat=0.2617 tau=1.014 len_ratio(mel)=0.74
+[step 2800] L_syl=0.1636 L_stat=0.1322 tau=1.014 len_ratio(mel)=0.76
+[step 2850] L_syl=0.1201 L_stat=0.0795 tau=1.014 len_ratio(mel)=0.86
+[step 2900] L_syl=0.0753 L_stat=0.4895 tau=1.014 len_ratio(mel)=0.83
+[step 2950] L_syl=0.1779 L_stat=0.1933 tau=1.014 len_ratio(mel)=0.76
+[step 3000] L_syl=0.1087 L_stat=1.4150 tau=1.014 len_ratio(mel)=0.85
+[ckpt] 3000
+[pure-drift] done
+[pure] exit=0 Mon Nov  9 17:41:57 CST 2026

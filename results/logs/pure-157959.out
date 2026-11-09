@@ -1,0 +1,35 @@
+[pure] start Mon Nov  9 05:50:43 PM CST 2026 nfe=4
+Download Vocos from huggingface charactr/vocos-mel-24khz
+
+vocab :  /mnt/beegfs/home/liudianru26/project/SylDrift/third_party/F5-TTS/src/f5_tts/infer/examples/vocab.txt
+token :  custom
+model :  hf_cache/hub/models--SWivid--F5-TTS/snapshots/84e5a410d9cead4de2f847e7c9369a6440bdfaca/F5TTS_v1_Base/model_1250000.safetensors 
+
+[mem] gradient checkpointing ON
+# pure-drift, no teacher, no regression term | nfe=4 beta=0.5 lr=3e-06 steps=1000
+[pool] cached 531 syllables
+[data] 6000 items
+[step 50] L_syl=0.5585 L_stat=3.1341 tau=1.000 len_ratio(mel)=0.77
+[step 100] L_syl=0.8201 L_stat=3.1562 tau=1.000 len_ratio(mel)=0.80
+[step 150] L_syl=0.6236 L_stat=1.6304 tau=1.000 len_ratio(mel)=0.79
+[step 200] L_syl=0.5104 L_stat=2.1781 tau=1.000 len_ratio(mel)=0.84
+[step 250] L_syl=0.3533 L_stat=1.1277 tau=1.001 len_ratio(mel)=0.87
+[step 300] L_syl=0.2819 L_stat=0.7839 tau=1.001 len_ratio(mel)=0.80
+[step 350] L_syl=0.1863 L_stat=0.4241 tau=1.001 len_ratio(mel)=0.84
+[step 400] L_syl=0.3468 L_stat=0.4946 tau=1.001 len_ratio(mel)=0.72
+[step 450] L_syl=0.2804 L_stat=2.9339 tau=1.001 len_ratio(mel)=0.66
+[step 500] L_syl=0.2244 L_stat=0.1216 tau=1.001 len_ratio(mel)=0.85
+[ckpt] 500
+[step 550] L_syl=0.2947 L_stat=1.3982 tau=1.001 len_ratio(mel)=0.75
+[step 600] L_syl=0.2107 L_stat=0.3050 tau=1.001 len_ratio(mel)=0.82
+[step 650] L_syl=0.3857 L_stat=0.6388 tau=1.001 len_ratio(mel)=0.77
+[step 700] L_syl=0.1899 L_stat=0.7674 tau=1.001 len_ratio(mel)=0.87
+[step 750] L_syl=0.1263 L_stat=0.9922 tau=1.001 len_ratio(mel)=0.87
+[step 800] L_syl=0.1485 L_stat=2.4990 tau=1.001 len_ratio(mel)=0.82
+[step 850] L_syl=0.1444 L_stat=0.5150 tau=1.001 len_ratio(mel)=0.85
+[step 900] L_syl=0.3171 L_stat=0.9977 tau=1.001 len_ratio(mel)=0.86
+[step 950] L_syl=0.1625 L_stat=0.1712 tau=1.001 len_ratio(mel)=0.83
+[step 1000] L_syl=0.2019 L_stat=0.2940 tau=1.001 len_ratio(mel)=0.82
+[ckpt] 1000
+[pure-drift] done
+[pure] exit=0 Mon Nov  9 06:07:58 PM CST 2026

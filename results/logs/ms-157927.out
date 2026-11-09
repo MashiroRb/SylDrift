@@ -1,0 +1,25 @@
+[nfe4][9] cer=0.600 len=1.00
+[nfe4][9] cer=0.800 len=0.40
+[nfe4][9] cer=0.600 len=0.65
+evaluated v4 @ 500
+[nfe4][9] cer=0.700 len=0.60
+[nfe4][9] cer=0.650 len=0.75
+[nfe4][9] cer=0.450 len=0.95
+evaluated v4 @ 1000
+[nfe4][9] cer=0.550 len=0.65
+[nfe4][9] cer=0.550 len=0.65
+[nfe4][9] cer=0.550 len=0.65
+evaluated v4 @ 1500
+[nfe4][9] cer=0.500 len=0.70
+[nfe4][9] cer=0.600 len=0.65
+[nfe4][9] cer=0.750 len=0.65
+evaluated v4 @ 2000
+[nfe4][9] cer=0.800 len=0.65
+[nfe4][9] cer=0.900 len=0.65
+[nfe4][9] cer=0.850 len=0.65
+evaluated v4 @ 2500
+[nfe4][9] cer=0.700 len=0.75
+[nfe4][9] cer=1.000 len=0.10
+[nfe4][9] cer=1.000 len=0.70
+evaluated v4 @ 3000
+[ms] exit=0

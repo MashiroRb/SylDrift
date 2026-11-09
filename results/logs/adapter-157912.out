@@ -1,0 +1,16 @@
+segments 69256 classes 535
+X torch.Size([69256, 24, 100])
+ep 1 loss 3.639 acc 0.509
+ep 2 loss 3.474 acc 0.513
+ep 3 loss 3.422 acc 0.513
+ep 4 loss 3.388 acc 0.513
+ep 5 loss 3.360 acc 0.513
+ep 6 loss 3.332 acc 0.513
+ep 7 loss 3.305 acc 0.513
+ep 8 loss 3.277 acc 0.513
+ep 9 loss 3.247 acc 0.513
+ep 10 loss 3.215 acc 0.513
+ep 11 loss 3.181 acc 0.513
+ep 12 loss 3.149 acc 0.513
+{"classes": 535, "probes": 69256, "top1_acc": 0.0169, "chance": 0.00187, "ratio": 9.04}
+done

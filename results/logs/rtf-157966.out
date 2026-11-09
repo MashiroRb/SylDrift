@@ -1,0 +1,156 @@
+/home/liudianru26/.conda/envs/syldrift/lib/python3.11/site-packages/pydub/utils.py:170: RuntimeWarning: Couldn't find ffmpeg or avconv - defaulting to ffmpeg, but may not work
+  warn("Couldn't find ffmpeg or avconv - defaulting to ffmpeg, but may not work", RuntimeWarning)
+Download Vocos from huggingface charactr/vocos-mel-24khz
+
+vocab :  /mnt/beegfs/home/liudianru26/project/SylDrift/third_party/F5-TTS/src/f5_tts/infer/examples/vocab.txt
+token :  custom
+model :  hf_cache/hub/models--SWivid--F5-TTS/snapshots/84e5a410d9cead4de2f847e7c9369a6440bdfaca/F5TTS_v1_Base/model_1250000.safetensors 
+
+Converting audio...
+Using custom reference text...
+
+ref_text   对于高管持股并不多. 
+gen_text 0 曼哈顿内部也会有很多变化
+
+
+Generating audio in 1 batches...
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:12<00:00, 12.26s/it]100%|██████████| 1/1 [00:12<00:00, 12.27s/it]
+Converting audio...
+Using custom reference text...
+
+ref_text   战争的创伤已被抹去. 
+gen_text 0 一定有你愿意为之牺牲的事
+
+
+Generating audio in 1 batches...
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:08<00:00,  8.81s/it]100%|██████████| 1/1 [00:08<00:00,  8.81s/it]
+Converting audio...
+Using custom reference text...
+
+ref_text   通讯企业有什么. 
+gen_text 0 吉林地区类大学有什么
+
+
+Generating audio in 1 batches...
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:05<00:00,  5.71s/it]100%|██████████| 1/1 [00:05<00:00,  5.71s/it]
+nfe 4: rtf 4.310 (wall 26.9s / audio 6.3s)
+Converting audio...
+Using cached preprocessed reference audio...
+Using custom reference text...
+
+ref_text   对于高管持股并不多. 
+gen_text 0 曼哈顿内部也会有很多变化
+
+
+Generating audio in 1 batches...
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:24<00:00, 24.33s/it]100%|██████████| 1/1 [00:24<00:00, 24.33s/it]
+Converting audio...
+Using cached preprocessed reference audio...
+Using custom reference text...
+
+ref_text   战争的创伤已被抹去. 
+gen_text 0 一定有你愿意为之牺牲的事
+
+
+Generating audio in 1 batches...
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:17<00:00, 17.27s/it]100%|██████████| 1/1 [00:17<00:00, 17.27s/it]
+Converting audio...
+Using cached preprocessed reference audio...
+Using custom reference text...
+
+ref_text   通讯企业有什么. 
+gen_text 0 吉林地区类大学有什么
+
+
+Generating audio in 1 batches...
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:11<00:00, 11.36s/it]100%|██████████| 1/1 [00:11<00:00, 11.36s/it]
+nfe 8: rtf 8.481 (wall 53.0s / audio 6.3s)
+Converting audio...
+Using cached preprocessed reference audio...
+Using custom reference text...
+
+ref_text   对于高管持股并不多. 
+gen_text 0 曼哈顿内部也会有很多变化
+
+
+Generating audio in 1 batches...
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:48<00:00, 48.16s/it]100%|██████████| 1/1 [00:48<00:00, 48.16s/it]
+Converting audio...
+Using cached preprocessed reference audio...
+Using custom reference text...
+
+ref_text   战争的创伤已被抹去. 
+gen_text 0 一定有你愿意为之牺牲的事
+
+
+Generating audio in 1 batches...
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:34<00:00, 34.37s/it]100%|██████████| 1/1 [00:34<00:00, 34.37s/it]
+Converting audio...
+Using cached preprocessed reference audio...
+Using custom reference text...
+
+ref_text   通讯企业有什么. 
+gen_text 0 吉林地区类大学有什么
+
+
+Generating audio in 1 batches...
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:22<00:00, 22.80s/it]100%|██████████| 1/1 [00:22<00:00, 22.81s/it]
+nfe 16: rtf 16.862 (wall 105.4s / audio 6.3s)
+Converting audio...
+Using cached preprocessed reference audio...
+Using custom reference text...
+
+ref_text   对于高管持股并不多. 
+gen_text 0 曼哈顿内部也会有很多变化
+
+
+Generating audio in 1 batches...
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [01:36<00:00, 96.36s/it]100%|██████████| 1/1 [01:36<00:00, 96.36s/it]
+Converting audio...
+Using cached preprocessed reference audio...
+Using custom reference text...
+
+ref_text   战争的创伤已被抹去. 
+gen_text 0 一定有你愿意为之牺牲的事
+
+
+Generating audio in 1 batches...
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [01:08<00:00, 68.95s/it]100%|██████████| 1/1 [01:08<00:00, 68.96s/it]
+Converting audio...
+Using cached preprocessed reference audio...
+Using custom reference text...
+
+ref_text   通讯企业有什么. 
+gen_text 0 吉林地区类大学有什么
+
+
+Generating audio in 1 batches...
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:45<00:00, 45.03s/it]100%|██████████| 1/1 [00:45<00:00, 45.03s/it]
+nfe 32: rtf 33.659 (wall 210.4s / audio 6.3s)
+{
+  "4": {
+    "rtf": 4.31,
+    "wall_s": 26.94,
+    "audio_s": 6.25,
+    "speedup_vs_32": 7.81
+  },
+  "8": {
+    "rtf": 8.481,
+    "wall_s": 53.01,
+    "audio_s": 6.25,
+    "speedup_vs_32": 3.97
+  },
+  "16": {
+    "rtf": 16.862,
+    "wall_s": 105.4,
+    "audio_s": 6.25,
+    "speedup_vs_32": 2.0
+  },
+  "32": {
+    "rtf": 33.659,
+    "wall_s": 210.39,
+    "audio_s": 6.25,
+    "speedup_vs_32": 1.0
+  }
+}
+done

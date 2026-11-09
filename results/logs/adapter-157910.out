@@ -1,0 +1,5 @@
+epoch 10 mse 0.9178 r2 0.0829
+epoch 20 mse 0.9116 r2 0.0881
+epoch 30 mse 0.9077 r2 0.0928
+saved data/mel2whisper_mlp.pt
+done

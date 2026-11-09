@@ -1,0 +1,11 @@
+enc 500
+enc 1000
+enc 1500
+enc 2000
+{
+  "syllables": 936,
+  "kept": 372,
+  "vectors": 19806,
+  "dim": 1280
+}
+[purity] exit=0
