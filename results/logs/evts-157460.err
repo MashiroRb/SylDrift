@@ -1,0 +1,40 @@
+/home/liudianru26/.conda/envs/syldrift/lib/python3.11/site-packages/pydub/utils.py:170: RuntimeWarning: Couldn't find ffmpeg or avconv - defaulting to ffmpeg, but may not work
+  warn("Couldn't find ffmpeg or avconv - defaulting to ffmpeg, but may not work", RuntimeWarning)
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:04<00:00,  4.26s/it]100%|██████████| 1/1 [00:04<00:00,  4.27s/it]
+/home/liudianru26/.conda/envs/syldrift/lib/python3.11/site-packages/transformers/models/whisper/generation_whisper.py:509: FutureWarning: The input name `inputs` is deprecated. Please make sure to use `input_features` instead.
+  warnings.warn(
+You have passed language=chinese, but also have set `forced_decoder_ids` to [[1, None], [2, 50359]] which creates a conflict. `forced_decoder_ids` will be ignored in favor of language=chinese.
+/home/liudianru26/.conda/envs/syldrift/lib/python3.11/site-packages/zhconv/zhconv.py:33: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import resource_stream
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00,  7.50it/s]100%|██████████| 1/1 [00:00<00:00,  7.45it/s]
+/home/liudianru26/.conda/envs/syldrift/lib/python3.11/site-packages/transformers/models/whisper/generation_whisper.py:509: FutureWarning: The input name `inputs` is deprecated. Please make sure to use `input_features` instead.
+  warnings.warn(
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00,  7.69it/s]100%|██████████| 1/1 [00:00<00:00,  7.64it/s]
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00,  6.13it/s]100%|██████████| 1/1 [00:00<00:00,  6.10it/s]
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00,  5.21it/s]100%|██████████| 1/1 [00:00<00:00,  5.19it/s]
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00,  7.33it/s]100%|██████████| 1/1 [00:00<00:00,  7.30it/s]
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00,  6.20it/s]100%|██████████| 1/1 [00:00<00:00,  6.17it/s]
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00,  7.39it/s]100%|██████████| 1/1 [00:00<00:00,  7.36it/s]
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00,  8.02it/s]100%|██████████| 1/1 [00:00<00:00,  7.98it/s]
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00,  8.42it/s]100%|██████████| 1/1 [00:00<00:00,  8.37it/s]
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00,  7.58it/s]100%|██████████| 1/1 [00:00<00:00,  7.54it/s]
+You seem to be using the pipelines sequentially on GPU. In order to maximize efficiency please use a dataset
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00,  8.43it/s]100%|██████████| 1/1 [00:00<00:00,  8.39it/s]
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00,  8.00it/s]100%|██████████| 1/1 [00:00<00:00,  7.95it/s]
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00,  7.92it/s]100%|██████████| 1/1 [00:00<00:00,  7.89it/s]
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 11915.64it/s]
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00,  7.95it/s]100%|██████████| 1/1 [00:00<00:00,  7.91it/s]
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00,  7.39it/s]100%|██████████| 1/1 [00:00<00:00,  7.34it/s]
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00,  7.56it/s]100%|██████████| 1/1 [00:00<00:00,  7.52it/s]
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00,  7.69it/s]100%|██████████| 1/1 [00:00<00:00,  7.65it/s]
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00,  6.45it/s]100%|██████████| 1/1 [00:00<00:00,  6.41it/s]
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00,  7.38it/s]100%|██████████| 1/1 [00:00<00:00,  7.34it/s]
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00,  8.45it/s]100%|██████████| 1/1 [00:00<00:00,  8.41it/s]
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00,  6.37it/s]100%|██████████| 1/1 [00:00<00:00,  6.34it/s]
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00,  7.89it/s]100%|██████████| 1/1 [00:00<00:00,  7.85it/s]
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00,  6.98it/s]100%|██████████| 1/1 [00:00<00:00,  6.94it/s]
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00,  5.03it/s]100%|██████████| 1/1 [00:00<00:00,  5.02it/s]
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00,  8.38it/s]100%|██████████| 1/1 [00:00<00:00,  8.34it/s]
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00,  7.77it/s]100%|██████████| 1/1 [00:00<00:00,  7.73it/s]
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00,  8.42it/s]100%|██████████| 1/1 [00:00<00:00,  8.37it/s]
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 15477.14it/s]

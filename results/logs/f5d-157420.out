@@ -1,1 +1,44 @@
 [f5d] start Sun Nov  8 05:03:42 PM CST 2026
+Download Vocos from huggingface charactr/vocos-mel-24khz
+
+vocab :  /mnt/beegfs/home/liudianru26/project/SylDrift/third_party/F5-TTS/src/f5_tts/infer/examples/vocab.txt
+token :  custom
+model :  hf_cache/hub/models--SWivid--F5-TTS/snapshots/84e5a410d9cead4de2f847e7c9369a6440bdfaca/F5TTS_v1_Base/model_1250000.safetensors 
+
+[drift] pool syllables 531
+[drift] items 6000
+[selfcheck] grad_norm=8.4624e+01 tau_grad=-1.8362e-03 l_drift=0.1659 l_rec=6.0039
+[step 25] rec=4.0291 drift=0.2273 tau=1.000 lam=0.05
+[step 50] rec=1.8623 drift=0.2245 tau=1.000 lam=0.05
+[step 75] rec=0.8681 drift=0.1607 tau=1.000 lam=0.05
+[step 100] rec=1.2592 drift=0.1990 tau=1.001 lam=0.05
+[step 125] rec=0.7597 drift=0.2271 tau=1.001 lam=0.05
+[step 150] rec=1.3977 drift=0.1093 tau=1.001 lam=0.05
+[step 175] rec=1.4279 drift=0.1002 tau=1.001 lam=0.05
+[step 200] rec=1.2159 drift=0.1001 tau=1.002 lam=0.05
+[step 225] rec=0.8158 drift=0.1348 tau=1.002 lam=0.05
+[step 250] rec=0.5377 drift=0.1608 tau=1.002 lam=0.05
+[step 275] rec=1.3123 drift=0.1565 tau=1.002 lam=0.05
+[step 300] rec=0.7185 drift=0.2630 tau=1.002 lam=0.05
+[step 325] rec=1.6292 drift=0.1175 tau=1.003 lam=0.05
+[step 350] rec=1.0875 drift=0.1104 tau=1.003 lam=0.05
+[step 375] rec=1.3114 drift=0.1742 tau=1.003 lam=0.05
+[step 400] rec=0.9461 drift=0.0837 tau=1.003 lam=0.05
+[step 425] rec=1.9263 drift=0.1879 tau=1.003 lam=0.05
+[step 450] rec=1.2613 drift=0.1389 tau=1.003 lam=0.05
+[step 475] rec=1.1965 drift=0.1466 tau=1.003 lam=0.05
+[step 500] rec=0.7691 drift=0.1568 tau=1.003 lam=0.05
+[step 525] rec=0.8554 drift=0.1856 tau=1.004 lam=0.05
+[step 550] rec=0.7117 drift=0.1170 tau=1.004 lam=0.05
+[step 575] rec=0.7026 drift=0.1524 tau=1.004 lam=0.05
+[step 600] rec=0.8135 drift=0.2124 tau=1.004 lam=0.05
+[step 625] rec=2.7362 drift=0.2123 tau=1.004 lam=0.05
+[step 650] rec=1.2345 drift=0.1899 tau=1.004 lam=0.05
+[step 675] rec=2.4220 drift=0.1400 tau=1.004 lam=0.05
+[step 700] rec=1.0103 drift=0.1303 tau=1.004 lam=0.05
+[step 725] rec=0.8971 drift=0.1739 tau=1.004 lam=0.05
+[step 750] rec=1.9225 drift=0.1687 tau=1.004 lam=0.05
+[step 775] rec=0.7905 drift=0.1078 tau=1.004 lam=0.05
+[step 800] rec=1.5902 drift=0.1507 tau=1.004 lam=0.05
+[drift] done
+[f5d] exit=0 Sun Nov  8 05:21:43 PM CST 2026

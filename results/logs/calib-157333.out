@@ -1,0 +1,19 @@
+[calib] start Sun Nov  8 16:20:40 CST 2026
+Download Vocos from huggingface charactr/vocos-mel-24khz
+
+vocab :  /mnt/beegfs/home/liudianru26/project/SylDrift/third_party/F5-TTS/src/f5_tts/infer/examples/vocab.txt
+token :  custom
+model :  hf_cache/hub/models--SWivid--F5-TTS/snapshots/84e5a410d9cead4de2f847e7c9369a6440bdfaca/F5TTS_v1_Base/model_1250000.safetensors 
+
+Converting audio...
+Using custom reference text...
+
+ref_text   Some call me nature, others call me mother nature. 
+gen_text 0 I don't really care what you call me. I've been a silent spectator, watching species evolve.
+
+
+Generating audio in 1 batches...
+REF: I don't really care what you call me. I've been a silent spectator, watching species evolve.
+HYP: 我真的不想你叫我我只是一個靜靜的演員看著物體的發展
+WER: 1.0
+[calib] exit=0 Sun Nov  8 16:23:55 CST 2026

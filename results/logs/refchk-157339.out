@@ -1,0 +1,19 @@
+SSB00090030  CER=0.667
+  ref_text : 碗碗香
+  asr(audio): 晚晚香
+SSB00180329  CER=0.500
+  ref_text : 搜一搜听
+  asr(audio): 收一收 聽
+SSB00570074  CER=0.500
+  ref_text : 广亮
+  asr(audio): 光亮
+SSB01450011  CER=0.000
+  ref_text : 想听快歌
+  asr(audio): 想聽快歌
+SSB01930462  CER=1.000
+  ref_text : 灵镜传奇
+  asr(audio): 铃进床棋
+SSB02610490  CER=1.000
+  ref_text : 童年
+  asr(audio): 同樣
+[refchk] exit=0

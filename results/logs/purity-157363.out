@@ -1,0 +1,17 @@
+enc 200
+enc 400
+enc 600
+enc 800
+enc 1000
+enc 1200
+[pool] syllables=866 with>=20=209
+{
+  "feature": "whisper-small encoder",
+  "classes": 209,
+  "probes": 24129,
+  "within": 0.5394,
+  "cross": 0.4999,
+  "top1_acc": 0.0173,
+  "chance": 0.00478
+}
+[purity] exit=0
