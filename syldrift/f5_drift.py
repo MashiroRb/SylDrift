@@ -64,6 +64,7 @@ def main():
     ap.add_argument("--lr", type=float, default=1e-5)
     ap.add_argument("--lambda_drift", type=float, default=0.1)
     ap.add_argument("--lam_rep", type=float, default=0.5)
+    ap.add_argument("--seed", type=int, default=0)
     ap.add_argument("--out", default="runs/f5_drift")
     ap.add_argument("--selfcheck", type=int, default=1)
     args = ap.parse_args()
@@ -72,6 +73,8 @@ def main():
     from transformers import WhisperModel, WhisperFeatureExtractor
     import soundfile as sf
 
+    import random as _r
+    torch.manual_seed(args.seed); np.random.seed(args.seed); _r.seed(args.seed)
     dev = "cuda" if torch.cuda.is_available() else "cpu"
     ck = glob.glob("hf_cache/hub/models--SWivid--F5-TTS/snapshots/*/F5TTS_v1_Base/model_*.safetensors")[0]
     f5 = F5TTS(model="F5TTS_v1_Base", ckpt_file=ck, device=dev)
@@ -189,7 +192,11 @@ def main():
                 gn = sum((p.grad ** 2).sum().item() for p in cfm.parameters() if p.grad is not None) ** 0.5
                 print(f"[selfcheck] grad_norm={gn:.4e} tau_grad={tau_raw.grad.item():.4e} "
                       f"l_drift={l_drift.item():.4f} l_rec={l_rec.item():.4f}", flush=True)
-                assert gn > 0 and abs(tau_raw.grad.item()) > 0, "drift/tau gradient is zero"
+                if args.lambda_drift > 0:
+                    assert gn > 0 and abs(tau_raw.grad.item()) > 0, "drift/tau gradient is zero"
+                else:
+                    # lambda=0 control: tau must get exactly zero gradient
+                    assert abs(tau_raw.grad.item()) == 0.0, "lambda=0 control still trains tau"
             torch.nn.utils.clip_grad_norm_(cfm.parameters(), 1.0)
             opt.step(); sched.step()
             with torch.no_grad():
